@@ -1,0 +1,17 @@
+{
+  "data" : {
+    "data" : {
+      "signIn" : {
+        "currentUser" : {
+          "slug" : "protu",
+          "jwtToken" : {
+            "token" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjMDJhMmU5NS0yYWU3LTQwNzEtYWVkMy00Yjc1ZTNiNTc0NjIiLCJzY3AiOiJ1c2VyIiwiYXVkIjoiVEZHIFNvcmFyZSIsImlhdCI6MTcwNjk4MTM0MCwiZXhwIjoiMTcwOTU3MzM0MCIsImp0aSI6IjZjNmQyYjBlLWUyYTEtNDQ5Mi1hMjdlLTZjZGIzYWU5YzZhZCJ9.VGQkQhNG21OQjmHxLtSepmAsbgT5OsPUkCakACl3y-Y",
+            "expiredAt" : "2024-03-04T17:29:00Z"
+          }
+        },
+        "otpSessionChallenge" : null,
+        "errors" : [ ]
+      }
+    }
+  }
+}

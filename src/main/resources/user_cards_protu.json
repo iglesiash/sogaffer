@@ -1,0 +1,935 @@
+{
+  "data" : {
+    "data" : {
+      "user" : {
+        "footballCards" : {
+          "edges" : [ {
+            "node" : {
+              "grade" : 0,
+              "last_15" : 40.0,
+              "last_5" : 54.0,
+              "positionTyped" : "Forward",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Girona FC",
+                  "domesticLeague" : {
+                    "displayName" : "LALIGA EA SPORTS"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 20
+                },
+                "country" : {
+                  "threeLetterCode" : "esp"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 1,
+              "last_15" : 62.0,
+              "last_5" : 55.0,
+              "positionTyped" : "Forward",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "FC Bayern München",
+                  "domesticLeague" : {
+                    "displayName" : "Bundesliga"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 19
+                },
+                "country" : {
+                  "threeLetterCode" : "eng"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 0,
+              "last_15" : 44.0,
+              "last_5" : 46.0,
+              "positionTyped" : "Defender",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "VfL Bochum 1848",
+                  "domesticLeague" : {
+                    "displayName" : "Bundesliga"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 18
+                },
+                "country" : {
+                  "threeLetterCode" : "bra"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 2,
+              "last_15" : 52.0,
+              "last_5" : 59.0,
+              "positionTyped" : "Forward",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Tottenham Hotspur FC",
+                  "domesticLeague" : {
+                    "displayName" : "Premier League"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 19
+                },
+                "country" : {
+                  "threeLetterCode" : "bra"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 2,
+              "last_15" : 50.0,
+              "last_5" : 50.0,
+              "positionTyped" : "Defender",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Chelsea FC",
+                  "domesticLeague" : {
+                    "displayName" : "Premier League"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 20
+                },
+                "country" : {
+                  "threeLetterCode" : "eng"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 1,
+              "last_15" : 41.0,
+              "last_5" : 32.0,
+              "positionTyped" : "Forward",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Real Sociedad de Fútbol",
+                  "domesticLeague" : {
+                    "displayName" : "LALIGA EA SPORTS"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 16
+                },
+                "country" : {
+                  "threeLetterCode" : "esp"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 1,
+              "last_15" : 39.0,
+              "last_5" : 41.0,
+              "positionTyped" : "Defender",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Real Club Celta de Vigo",
+                  "domesticLeague" : {
+                    "displayName" : "LALIGA EA SPORTS"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 22
+                },
+                "country" : {
+                  "threeLetterCode" : "esp"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 1,
+              "last_15" : 50.0,
+              "last_5" : 46.0,
+              "positionTyped" : "Forward",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "SSC Napoli",
+                  "domesticLeague" : {
+                    "displayName" : "Serie A"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 20
+                },
+                "country" : {
+                  "threeLetterCode" : "bel"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 55.0,
+              "last_5" : 51.0,
+              "positionTyped" : "Forward",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "AC Milan",
+                  "domesticLeague" : {
+                    "displayName" : "Serie A"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 19
+                },
+                "country" : {
+                  "threeLetterCode" : "prt"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 0,
+              "last_15" : 44.0,
+              "last_5" : 48.0,
+              "positionTyped" : "Defender",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "US Sassuolo Calcio",
+                  "domesticLeague" : {
+                    "displayName" : "Serie A"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 18
+                },
+                "country" : {
+                  "threeLetterCode" : "deu"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 55.0,
+              "last_5" : 61.0,
+              "positionTyped" : "Goalkeeper",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "AC Milan",
+                  "domesticLeague" : {
+                    "displayName" : "Serie A"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 19
+                },
+                "country" : {
+                  "threeLetterCode" : "fra"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 58.0,
+              "last_5" : 52.0,
+              "positionTyped" : "Defender",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "SSC Napoli",
+                  "domesticLeague" : {
+                    "displayName" : "Serie A"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 21
+                },
+                "country" : {
+                  "threeLetterCode" : "ita"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 55.0,
+              "last_5" : 62.0,
+              "positionTyped" : "Midfielder",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Atalanta Bergamasca Calcio",
+                  "domesticLeague" : {
+                    "displayName" : "Serie A"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 19
+                },
+                "country" : {
+                  "threeLetterCode" : "bel"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 0,
+              "last_15" : 61.0,
+              "last_5" : 61.0,
+              "positionTyped" : "Goalkeeper",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "SS Lazio",
+                  "domesticLeague" : {
+                    "displayName" : "Serie A"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 21
+                },
+                "country" : {
+                  "threeLetterCode" : "ita"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 1,
+              "last_15" : 45.0,
+              "last_5" : 54.0,
+              "positionTyped" : "Midfielder",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "SS Lazio",
+                  "domesticLeague" : {
+                    "displayName" : "Serie A"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 21
+                },
+                "country" : {
+                  "threeLetterCode" : "fra"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 43.0,
+              "last_5" : 42.0,
+              "positionTyped" : "Goalkeeper",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Nottingham Forest FC",
+                  "domesticLeague" : {
+                    "displayName" : "Premier League"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 19
+                },
+                "country" : {
+                  "threeLetterCode" : "bel"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 2,
+              "last_15" : 53.0,
+              "last_5" : 46.0,
+              "positionTyped" : "Forward",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Stade de Reims",
+                  "domesticLeague" : {
+                    "displayName" : "French League 1"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 18
+                },
+                "country" : {
+                  "threeLetterCode" : "dnk"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 1,
+              "last_15" : 45.0,
+              "last_5" : 46.0,
+              "positionTyped" : "Defender",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Toulouse FC",
+                  "domesticLeague" : {
+                    "displayName" : "French League 1"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 19
+                },
+                "country" : {
+                  "threeLetterCode" : "dnk"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 1,
+              "last_15" : 43.0,
+              "last_5" : 33.0,
+              "positionTyped" : "Forward",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "FC Nantes",
+                  "domesticLeague" : {
+                    "displayName" : "French League 1"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 17
+                },
+                "country" : {
+                  "threeLetterCode" : "nga"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 51.0,
+              "last_5" : 55.0,
+              "positionTyped" : "Midfielder",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "FC Nantes",
+                  "domesticLeague" : {
+                    "displayName" : "French League 1"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 18
+                },
+                "country" : {
+                  "threeLetterCode" : "esp"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 2,
+              "last_15" : 50.0,
+              "last_5" : 34.0,
+              "positionTyped" : "Defender",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Clermont Foot 63",
+                  "domesticLeague" : {
+                    "displayName" : "French League 1"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 15
+                },
+                "country" : {
+                  "threeLetterCode" : "bra"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 56.0,
+              "last_5" : 60.0,
+              "positionTyped" : "Midfielder",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Stade Rennais F.C.",
+                  "domesticLeague" : {
+                    "displayName" : "French League 1"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 17
+                },
+                "country" : {
+                  "threeLetterCode" : "nld"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 0,
+              "last_15" : 40.0,
+              "last_5" : 26.0,
+              "positionTyped" : "Goalkeeper",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "FC Lorient",
+                  "domesticLeague" : {
+                    "displayName" : "French League 1"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 19
+                },
+                "country" : {
+                  "threeLetterCode" : "che"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 0,
+              "last_15" : 44.0,
+              "last_5" : 50.0,
+              "positionTyped" : "Goalkeeper",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Borussia Mönchengladbach",
+                  "domesticLeague" : {
+                    "displayName" : "Bundesliga"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 17
+                },
+                "country" : {
+                  "threeLetterCode" : "deu"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 47.0,
+              "last_5" : 39.0,
+              "positionTyped" : "Goalkeeper",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "1. FC Köln",
+                  "domesticLeague" : {
+                    "displayName" : "Bundesliga"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 19
+                },
+                "country" : {
+                  "threeLetterCode" : "deu"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 2,
+              "last_15" : 54.0,
+              "last_5" : 67.0,
+              "positionTyped" : "Defender",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "FC Bayern München",
+                  "domesticLeague" : {
+                    "displayName" : "Bundesliga"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 17
+                },
+                "country" : {
+                  "threeLetterCode" : "can"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 0,
+              "last_15" : 40.0,
+              "last_5" : 31.0,
+              "positionTyped" : "Forward",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "RB Leipzig",
+                  "domesticLeague" : {
+                    "displayName" : "Bundesliga"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 18
+                },
+                "country" : {
+                  "threeLetterCode" : "dnk"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 51.0,
+              "last_5" : 44.0,
+              "positionTyped" : "Midfielder",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "VfB Stuttgart",
+                  "domesticLeague" : {
+                    "displayName" : "Bundesliga"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 17
+                },
+                "country" : {
+                  "threeLetterCode" : "fra"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 58.0,
+              "last_5" : 61.0,
+              "positionTyped" : "Midfielder",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Bayer 04 Leverkusen",
+                  "domesticLeague" : {
+                    "displayName" : "Bundesliga"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 19
+                },
+                "country" : {
+                  "threeLetterCode" : "che"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 2,
+              "last_15" : 49.0,
+              "last_5" : 28.0,
+              "positionTyped" : "Midfielder",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Aston Villa FC",
+                  "domesticLeague" : {
+                    "displayName" : "Premier League"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 18
+                },
+                "country" : {
+                  "threeLetterCode" : "bel"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 59.0,
+              "last_5" : 59.0,
+              "positionTyped" : "Goalkeeper",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Everton FC",
+                  "domesticLeague" : {
+                    "displayName" : "Premier League"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 22
+                },
+                "country" : {
+                  "threeLetterCode" : "eng"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 52.0,
+              "last_5" : 56.0,
+              "positionTyped" : "Forward",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Manchester United FC",
+                  "domesticLeague" : {
+                    "displayName" : "Premier League"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 20
+                },
+                "country" : {
+                  "threeLetterCode" : "arg"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 0,
+              "last_15" : 44.0,
+              "last_5" : 38.0,
+              "positionTyped" : "Goalkeeper",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Fulham FC",
+                  "domesticLeague" : {
+                    "displayName" : "Premier League"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 22
+                },
+                "country" : {
+                  "threeLetterCode" : "deu"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 2,
+              "last_15" : 43.0,
+              "last_5" : 32.0,
+              "positionTyped" : "Defender",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Manchester United FC",
+                  "domesticLeague" : {
+                    "displayName" : "Premier League"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 9
+                },
+                "country" : {
+                  "threeLetterCode" : "eng"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 2,
+              "last_15" : 57.0,
+              "last_5" : 54.0,
+              "positionTyped" : "Midfielder",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "West Ham United FC",
+                  "domesticLeague" : {
+                    "displayName" : "Premier League"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 21
+                },
+                "country" : {
+                  "threeLetterCode" : "cze"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 1,
+              "last_15" : 53.0,
+              "last_5" : 44.0,
+              "positionTyped" : "Goalkeeper",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Getafe Club de Fútbol",
+                  "domesticLeague" : {
+                    "displayName" : "LALIGA EA SPORTS"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 22
+                },
+                "country" : {
+                  "threeLetterCode" : "esp"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 61.0,
+              "last_5" : 66.0,
+              "positionTyped" : "Goalkeeper",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "UD Las Palmas",
+                  "domesticLeague" : {
+                    "displayName" : "LALIGA EA SPORTS"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 22
+                },
+                "country" : {
+                  "threeLetterCode" : "esp"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 3,
+              "last_15" : 53.0,
+              "last_5" : 58.0,
+              "positionTyped" : "Defender",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Real Madrid CF",
+                  "domesticLeague" : {
+                    "displayName" : "LALIGA EA SPORTS"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 17
+                },
+                "country" : {
+                  "threeLetterCode" : "esp"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 4,
+              "last_15" : 62.0,
+              "last_5" : 51.0,
+              "positionTyped" : "Midfielder",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Girona FC",
+                  "domesticLeague" : {
+                    "displayName" : "LALIGA EA SPORTS"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 21
+                },
+                "country" : {
+                  "threeLetterCode" : "esp"
+                }
+              }
+            }
+          }, {
+            "node" : {
+              "grade" : 2,
+              "last_15" : 48.0,
+              "last_5" : 41.0,
+              "positionTyped" : "Midfielder",
+              "tradeableStatus" : "NO",
+              "seasonYear" : 2023,
+              "player" : {
+                "activeClub" : {
+                  "name" : "Club Atlético de Madrid",
+                  "domesticLeague" : {
+                    "displayName" : "LALIGA EA SPORTS"
+                  }
+                },
+                "stats" : {
+                  "appearances" : 22
+                },
+                "country" : {
+                  "threeLetterCode" : "esp"
+                }
+              }
+            }
+          } ],
+          "pageInfo" : {
+            "endCursor" : "WyIyMDIzLTEyLTAxIDIwOjMzOjA3LjMyMzI5MjAwMCBVVEMiLCIzOTlkZTAwYy0xMTFjLTQ5MGQtYjFhNS0xYWIyOWJjNGRjNmIiXQ",
+            "hasNextPage" : false
+          }
+        }
+      }
+    }
+  }
+}

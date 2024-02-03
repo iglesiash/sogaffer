@@ -1,0 +1,233 @@
+{
+  "data" : {
+    "data" : {
+      "football" : {
+        "player" : {
+          "allSo5Scores" : {
+            "nodes" : [ {
+              "score" : 72.2,
+              "game" : {
+                "date" : "2024-01-27T20:00:00Z",
+                "homeTeam" : {
+                  "name" : "Real Club Deportivo Mallorca"
+                },
+                "awayTeam" : {
+                  "name" : "Real Betis Balompié"
+                }
+              }
+            }, {
+              "score" : 75.5,
+              "game" : {
+                "date" : "2024-01-21T17:30:00Z",
+                "homeTeam" : {
+                  "name" : "Real Betis Balompié"
+                },
+                "awayTeam" : {
+                  "name" : "FC Barcelona"
+                }
+              }
+            }, {
+              "score" : 91.0,
+              "game" : {
+                "date" : "2024-01-13T20:00:00Z",
+                "homeTeam" : {
+                  "name" : "Real Betis Balompié"
+                },
+                "awayTeam" : {
+                  "name" : "Granada CF"
+                }
+              }
+            }, {
+              "score" : 80.7,
+              "game" : {
+                "date" : "2024-01-03T18:15:00Z",
+                "homeTeam" : {
+                  "name" : "Real Club Celta de Vigo"
+                },
+                "awayTeam" : {
+                  "name" : "Real Betis Balompié"
+                }
+              }
+            }, {
+              "score" : 0.0,
+              "game" : {
+                "date" : "2023-12-21T18:00:00Z",
+                "homeTeam" : {
+                  "name" : "Real Betis Balompié"
+                },
+                "awayTeam" : {
+                  "name" : "Girona FC"
+                }
+              }
+            }, {
+              "score" : 50.4,
+              "game" : {
+                "date" : "2023-12-17T15:15:00Z",
+                "homeTeam" : {
+                  "name" : "Real Sociedad de Fútbol"
+                },
+                "awayTeam" : {
+                  "name" : "Real Betis Balompié"
+                }
+              }
+            }, {
+              "score" : 83.1,
+              "game" : {
+                "date" : "2023-12-14T20:00:00Z",
+                "homeTeam" : {
+                  "name" : "Real Betis Balompié"
+                },
+                "awayTeam" : {
+                  "name" : "Rangers FC"
+                }
+              }
+            }, {
+              "score" : 50.8,
+              "game" : {
+                "date" : "2023-12-09T15:15:00Z",
+                "homeTeam" : {
+                  "name" : "Real Betis Balompié"
+                },
+                "awayTeam" : {
+                  "name" : "Real Madrid CF"
+                }
+              }
+            }, {
+              "score" : 35.4,
+              "game" : {
+                "date" : "2023-12-03T15:15:00Z",
+                "homeTeam" : {
+                  "name" : "UD Almería"
+                },
+                "awayTeam" : {
+                  "name" : "Real Betis Balompié"
+                }
+              }
+            }, {
+              "score" : 25.5,
+              "game" : {
+                "date" : "2023-11-30T17:45:00Z",
+                "homeTeam" : {
+                  "name" : "AC Sparta Praha"
+                },
+                "awayTeam" : {
+                  "name" : "Real Betis Balompié"
+                }
+              }
+            }, {
+              "score" : 45.7,
+              "game" : {
+                "date" : "2023-11-26T20:00:00Z",
+                "homeTeam" : {
+                  "name" : "Real Betis Balompié"
+                },
+                "awayTeam" : {
+                  "name" : "UD Las Palmas"
+                }
+              }
+            }, {
+              "score" : 55.7,
+              "game" : {
+                "date" : "2023-11-12T17:30:00Z",
+                "homeTeam" : {
+                  "name" : "Sevilla FC"
+                },
+                "awayTeam" : {
+                  "name" : "Real Betis Balompié"
+                }
+              }
+            }, {
+              "score" : 70.4,
+              "game" : {
+                "date" : "2023-11-09T20:00:00Z",
+                "homeTeam" : {
+                  "name" : "Real Betis Balompié"
+                },
+                "awayTeam" : {
+                  "name" : "Aris FC Limassol"
+                }
+              }
+            }, {
+              "score" : 73.7,
+              "game" : {
+                "date" : "2023-11-04T15:15:00Z",
+                "homeTeam" : {
+                  "name" : "Real Betis Balompié"
+                },
+                "awayTeam" : {
+                  "name" : "Real Club Deportivo Mallorca"
+                }
+              }
+            }, {
+              "score" : 80.4,
+              "game" : {
+                "date" : "2023-10-29T13:00:00Z",
+                "homeTeam" : {
+                  "name" : "Real Betis Balompié"
+                },
+                "awayTeam" : {
+                  "name" : "CA Osasuna"
+                }
+              }
+            }, {
+              "score" : 25.7,
+              "game" : {
+                "date" : "2023-10-26T16:45:00Z",
+                "homeTeam" : {
+                  "name" : "Aris FC Limassol"
+                },
+                "awayTeam" : {
+                  "name" : "Real Betis Balompié"
+                }
+              }
+            }, {
+              "score" : 64.7,
+              "game" : {
+                "date" : "2023-10-21T14:15:00Z",
+                "homeTeam" : {
+                  "name" : "Getafe Club de Fútbol"
+                },
+                "awayTeam" : {
+                  "name" : "Real Betis Balompié"
+                }
+              }
+            }, {
+              "score" : 45.7,
+              "game" : {
+                "date" : "2023-10-08T16:30:00Z",
+                "homeTeam" : {
+                  "name" : "Deportivo Alavés"
+                },
+                "awayTeam" : {
+                  "name" : "Real Betis Balompié"
+                }
+              }
+            }, {
+              "score" : 70.2,
+              "game" : {
+                "date" : "2023-10-05T16:45:00Z",
+                "homeTeam" : {
+                  "name" : "Real Betis Balompié"
+                },
+                "awayTeam" : {
+                  "name" : "AC Sparta Praha"
+                }
+              }
+            }, {
+              "score" : 73.5,
+              "game" : {
+                "date" : "2023-10-01T19:00:00Z",
+                "homeTeam" : {
+                  "name" : "Real Betis Balompié"
+                },
+                "awayTeam" : {
+                  "name" : "Valencia CF"
+                }
+              }
+            } ]
+          }
+        }
+      }
+    }
+  }
+}

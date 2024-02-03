@@ -1,0 +1,1791 @@
+{
+  "data" : {
+    "data" : {
+      "football" : {
+        "game" : {
+          "homeTeam" : {
+            "name" : "Real Club Deportivo Mallorca"
+          },
+          "awayTeam" : {
+            "name" : "Real Betis Balompié"
+          },
+          "awayFormation" : {
+            "startingLineup" : [ [ {
+              "slug" : "rui-tiago-dantas-da-silva",
+              "currentSeason" : {
+                "startYear" : 2023
+              },
+              "activeClub" : {
+                "name" : "Real Betis Balompié"
+              },
+              "so5Score" : {
+                "score" : 64.5,
+                "allAroundStats" : [ {
+                  "points" : 0.0,
+                  "stat" : "mins_played",
+                  "statValue" : 90.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "yellow_card",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -1.0,
+                  "stat" : "fouls",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "error_lead_to_shot",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "goals_conceded",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.3,
+                  "stat" : "poss_lost_ctrl",
+                  "statValue" : 19.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "big_chance_created",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "adjusted_total_att_assist",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.1,
+                  "stat" : "accurate_pass",
+                  "statValue" : 15.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "successful_final_third_passes",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 0.2,
+                  "stat" : "accurate_long_balls",
+                  "statValue" : 10.0
+                }, {
+                  "points" : -0.2,
+                  "stat" : "missed_pass",
+                  "statValue" : 19.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "ontarget_scoring_att",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "penalty_kick_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "big_chance_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saves",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saved_ibox",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "good_high_claim",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "punches",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "dive_save",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.5,
+                  "stat" : "dive_catch",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "cross_not_claimed",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "six_second_violation",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 5.0,
+                  "stat" : "gk_smother",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "accurate_keeper_sweeper",
+                  "statValue" : 2.0
+                } ],
+                "playerGameStats" : {
+                  "accuratePass" : 15,
+                  "duelWon" : 1
+                }
+              }
+            } ], [ {
+              "slug" : "hector-bellerin-moruno",
+              "currentSeason" : {
+                "startYear" : 2023
+              },
+              "activeClub" : {
+                "name" : "Real Betis Balompié"
+              },
+              "so5Score" : {
+                "score" : 42.9,
+                "allAroundStats" : [ {
+                  "points" : 0.0,
+                  "stat" : "mins_played",
+                  "statValue" : 90.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "yellow_card",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -2.0,
+                  "stat" : "fouls",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "error_lead_to_shot",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 10.0,
+                  "stat" : "clean_sheet_60",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -4.0,
+                  "stat" : "goals_conceded",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "effective_clearance",
+                  "statValue" : 2.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "won_tackle",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "blocked_cross",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "outfielder_block",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 4.0,
+                  "stat" : "double_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 6.0,
+                  "stat" : "triple_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 12.0,
+                  "stat" : "triple_triple",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.6,
+                  "stat" : "poss_lost_ctrl",
+                  "statValue" : 10.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "poss_won",
+                  "statValue" : 3.0
+                }, {
+                  "points" : -2.0,
+                  "stat" : "duel_lost",
+                  "statValue" : 6.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "duel_won",
+                  "statValue" : 2.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "interception_won",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "big_chance_created",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "adjusted_total_att_assist",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 0.08,
+                  "stat" : "accurate_pass",
+                  "statValue" : 31.0
+                }, {
+                  "points" : 0.4,
+                  "stat" : "successful_final_third_passes",
+                  "statValue" : 9.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "accurate_long_balls",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "long_pass_own_to_opp_success",
+                  "statValue" : 4.0
+                }, {
+                  "points" : -0.2,
+                  "stat" : "missed_pass",
+                  "statValue" : 6.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "ontarget_scoring_att",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "won_contest",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "pen_area_entries",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "penalty_kick_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "big_chance_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saves",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saved_ibox",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "good_high_claim",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "punches",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "dive_save",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.5,
+                  "stat" : "dive_catch",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "cross_not_claimed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "six_second_violation",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 5.0,
+                  "stat" : "gk_smother",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "accurate_keeper_sweeper",
+                  "statValue" : 0.0
+                } ],
+                "playerGameStats" : {
+                  "accuratePass" : 31,
+                  "duelWon" : 2
+                }
+              }
+            }, {
+              "slug" : "german-alejandro-pezzella",
+              "currentSeason" : {
+                "startYear" : 2023
+              },
+              "activeClub" : {
+                "name" : "Real Betis Balompié"
+              },
+              "so5Score" : {
+                "score" : 28.2,
+                "allAroundStats" : [ {
+                  "points" : 0.0,
+                  "stat" : "mins_played",
+                  "statValue" : 45.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "yellow_card",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -2.0,
+                  "stat" : "fouls",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "error_lead_to_shot",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 10.0,
+                  "stat" : "clean_sheet_60",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -4.0,
+                  "stat" : "goals_conceded",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "effective_clearance",
+                  "statValue" : 2.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "won_tackle",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "blocked_cross",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "outfielder_block",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 4.0,
+                  "stat" : "double_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 6.0,
+                  "stat" : "triple_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 12.0,
+                  "stat" : "triple_triple",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.6,
+                  "stat" : "poss_lost_ctrl",
+                  "statValue" : 4.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "poss_won",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -2.0,
+                  "stat" : "duel_lost",
+                  "statValue" : 4.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "duel_won",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "interception_won",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "big_chance_created",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "adjusted_total_att_assist",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.08,
+                  "stat" : "accurate_pass",
+                  "statValue" : 17.0
+                }, {
+                  "points" : 0.4,
+                  "stat" : "successful_final_third_passes",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "accurate_long_balls",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "long_pass_own_to_opp_success",
+                  "statValue" : 4.0
+                }, {
+                  "points" : -0.2,
+                  "stat" : "missed_pass",
+                  "statValue" : 4.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "ontarget_scoring_att",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "won_contest",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "pen_area_entries",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "penalty_kick_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "big_chance_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saves",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saved_ibox",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "good_high_claim",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "punches",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "dive_save",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.5,
+                  "stat" : "dive_catch",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "cross_not_claimed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "six_second_violation",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 5.0,
+                  "stat" : "gk_smother",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "accurate_keeper_sweeper",
+                  "statValue" : 0.0
+                } ],
+                "playerGameStats" : {
+                  "accuratePass" : 17,
+                  "duelWon" : 1
+                }
+              }
+            }, {
+              "slug" : "sokratis-papastathopoulos",
+              "currentSeason" : {
+                "startYear" : 2023
+              },
+              "activeClub" : {
+                "name" : "Real Betis Balompié"
+              },
+              "so5Score" : {
+                "score" : 56.9,
+                "allAroundStats" : [ {
+                  "points" : 0.0,
+                  "stat" : "mins_played",
+                  "statValue" : 90.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "yellow_card",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -2.0,
+                  "stat" : "fouls",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "error_lead_to_shot",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 10.0,
+                  "stat" : "clean_sheet_60",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -4.0,
+                  "stat" : "goals_conceded",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "effective_clearance",
+                  "statValue" : 9.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "won_tackle",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "blocked_cross",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "outfielder_block",
+                  "statValue" : 2.0
+                }, {
+                  "points" : 4.0,
+                  "stat" : "double_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 6.0,
+                  "stat" : "triple_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 12.0,
+                  "stat" : "triple_triple",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.6,
+                  "stat" : "poss_lost_ctrl",
+                  "statValue" : 8.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "poss_won",
+                  "statValue" : 7.0
+                }, {
+                  "points" : -2.0,
+                  "stat" : "duel_lost",
+                  "statValue" : 3.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "duel_won",
+                  "statValue" : 3.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "interception_won",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "big_chance_created",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "adjusted_total_att_assist",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.08,
+                  "stat" : "accurate_pass",
+                  "statValue" : 36.0
+                }, {
+                  "points" : 0.4,
+                  "stat" : "successful_final_third_passes",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "accurate_long_balls",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "long_pass_own_to_opp_success",
+                  "statValue" : 8.0
+                }, {
+                  "points" : -0.2,
+                  "stat" : "missed_pass",
+                  "statValue" : 8.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "ontarget_scoring_att",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "won_contest",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "pen_area_entries",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "penalty_kick_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "big_chance_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saves",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saved_ibox",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "good_high_claim",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "punches",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "dive_save",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.5,
+                  "stat" : "dive_catch",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "cross_not_claimed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "six_second_violation",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 5.0,
+                  "stat" : "gk_smother",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "accurate_keeper_sweeper",
+                  "statValue" : 0.0
+                } ],
+                "playerGameStats" : {
+                  "accuratePass" : 36,
+                  "duelWon" : 3
+                }
+              }
+            }, {
+              "slug" : "abner-vinicius-da-silva-santos",
+              "currentSeason" : {
+                "startYear" : 2023
+              },
+              "activeClub" : {
+                "name" : "Real Betis Balompié"
+              },
+              "so5Score" : {
+                "score" : 60.2,
+                "allAroundStats" : [ {
+                  "points" : 0.0,
+                  "stat" : "mins_played",
+                  "statValue" : 90.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "yellow_card",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -2.0,
+                  "stat" : "fouls",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "error_lead_to_shot",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 10.0,
+                  "stat" : "clean_sheet_60",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -4.0,
+                  "stat" : "goals_conceded",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "effective_clearance",
+                  "statValue" : 4.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "won_tackle",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "blocked_cross",
+                  "statValue" : 2.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "outfielder_block",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 4.0,
+                  "stat" : "double_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 6.0,
+                  "stat" : "triple_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 12.0,
+                  "stat" : "triple_triple",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.6,
+                  "stat" : "poss_lost_ctrl",
+                  "statValue" : 10.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "poss_won",
+                  "statValue" : 3.0
+                }, {
+                  "points" : -2.0,
+                  "stat" : "duel_lost",
+                  "statValue" : 2.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "duel_won",
+                  "statValue" : 2.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "interception_won",
+                  "statValue" : 2.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "big_chance_created",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "adjusted_total_att_assist",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.08,
+                  "stat" : "accurate_pass",
+                  "statValue" : 33.0
+                }, {
+                  "points" : 0.4,
+                  "stat" : "successful_final_third_passes",
+                  "statValue" : 10.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "accurate_long_balls",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "long_pass_own_to_opp_success",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -0.2,
+                  "stat" : "missed_pass",
+                  "statValue" : 7.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "ontarget_scoring_att",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "won_contest",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "pen_area_entries",
+                  "statValue" : 3.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "penalty_kick_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "big_chance_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saves",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saved_ibox",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "good_high_claim",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "punches",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "dive_save",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.5,
+                  "stat" : "dive_catch",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "cross_not_claimed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "six_second_violation",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 5.0,
+                  "stat" : "gk_smother",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "accurate_keeper_sweeper",
+                  "statValue" : 0.0
+                } ],
+                "playerGameStats" : {
+                  "accuratePass" : 33,
+                  "duelWon" : 2
+                }
+              }
+            } ], [ {
+              "slug" : "sergi-altimira-clavell",
+              "currentSeason" : {
+                "startYear" : 2023
+              },
+              "activeClub" : {
+                "name" : "Real Betis Balompié"
+              },
+              "so5Score" : {
+                "score" : 77.5,
+                "allAroundStats" : [ {
+                  "points" : 0.0,
+                  "stat" : "mins_played",
+                  "statValue" : 90.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "yellow_card",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -1.0,
+                  "stat" : "fouls",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "was_fouled",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "error_lead_to_shot",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -2.0,
+                  "stat" : "goals_conceded",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "won_tackle",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "blocked_cross",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "outfielder_block",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 4.0,
+                  "stat" : "double_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 6.0,
+                  "stat" : "triple_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 12.0,
+                  "stat" : "triple_triple",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.5,
+                  "stat" : "poss_lost_ctrl",
+                  "statValue" : 8.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "poss_won",
+                  "statValue" : 7.0
+                }, {
+                  "points" : -0.8,
+                  "stat" : "duel_lost",
+                  "statValue" : 3.0
+                }, {
+                  "points" : 0.8,
+                  "stat" : "duel_won",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "interception_won",
+                  "statValue" : 3.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "big_chance_created",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "adjusted_total_att_assist",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.1,
+                  "stat" : "accurate_pass",
+                  "statValue" : 50.0
+                }, {
+                  "points" : 0.3,
+                  "stat" : "successful_final_third_passes",
+                  "statValue" : 13.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "accurate_long_balls",
+                  "statValue" : 2.0
+                }, {
+                  "points" : -0.3,
+                  "stat" : "missed_pass",
+                  "statValue" : 6.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "ontarget_scoring_att",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "won_contest",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "pen_area_entries",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "penalty_kick_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "big_chance_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saves",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saved_ibox",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "good_high_claim",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "punches",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "dive_save",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.5,
+                  "stat" : "dive_catch",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "cross_not_claimed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "six_second_violation",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 5.0,
+                  "stat" : "gk_smother",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "accurate_keeper_sweeper",
+                  "statValue" : 0.0
+                } ],
+                "playerGameStats" : {
+                  "accuratePass" : 50,
+                  "duelWon" : 1
+                }
+              }
+            }, {
+              "slug" : "joao-lucas-de-souza-cardoso",
+              "currentSeason" : {
+                "startYear" : 2023
+              },
+              "activeClub" : {
+                "name" : "Real Betis Balompié"
+              },
+              "so5Score" : {
+                "score" : 59.6,
+                "allAroundStats" : [ {
+                  "points" : 0.0,
+                  "stat" : "mins_played",
+                  "statValue" : 90.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "yellow_card",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -1.0,
+                  "stat" : "fouls",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "was_fouled",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "error_lead_to_shot",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -2.0,
+                  "stat" : "goals_conceded",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "won_tackle",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "blocked_cross",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "outfielder_block",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 4.0,
+                  "stat" : "double_double",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 6.0,
+                  "stat" : "triple_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 12.0,
+                  "stat" : "triple_triple",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.5,
+                  "stat" : "poss_lost_ctrl",
+                  "statValue" : 6.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "poss_won",
+                  "statValue" : 5.0
+                }, {
+                  "points" : -0.8,
+                  "stat" : "duel_lost",
+                  "statValue" : 2.0
+                }, {
+                  "points" : 0.8,
+                  "stat" : "duel_won",
+                  "statValue" : 8.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "interception_won",
+                  "statValue" : 2.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "big_chance_created",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "adjusted_total_att_assist",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.1,
+                  "stat" : "accurate_pass",
+                  "statValue" : 37.0
+                }, {
+                  "points" : 0.3,
+                  "stat" : "successful_final_third_passes",
+                  "statValue" : 6.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "accurate_long_balls",
+                  "statValue" : 3.0
+                }, {
+                  "points" : -0.3,
+                  "stat" : "missed_pass",
+                  "statValue" : 4.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "ontarget_scoring_att",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "won_contest",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "pen_area_entries",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "penalty_kick_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "big_chance_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saves",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saved_ibox",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "good_high_claim",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "punches",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "dive_save",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.5,
+                  "stat" : "dive_catch",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "cross_not_claimed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "six_second_violation",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 5.0,
+                  "stat" : "gk_smother",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "accurate_keeper_sweeper",
+                  "statValue" : 0.0
+                } ],
+                "playerGameStats" : {
+                  "accuratePass" : 37,
+                  "duelWon" : 8
+                }
+              }
+            } ], [ {
+              "slug" : "luiz-henrique-andre-rosa-da-silva",
+              "currentSeason" : {
+                "startYear" : 2023
+              },
+              "activeClub" : {
+                "name" : "Botafogo FR"
+              },
+              "so5Score" : {
+                "score" : 56.3,
+                "allAroundStats" : [ {
+                  "points" : 0.0,
+                  "stat" : "mins_played",
+                  "statValue" : 84.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "yellow_card",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.5,
+                  "stat" : "fouls",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "was_fouled",
+                  "statValue" : 2.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "error_lead_to_shot",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 4.0,
+                  "stat" : "double_double",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 6.0,
+                  "stat" : "triple_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 12.0,
+                  "stat" : "triple_triple",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.1,
+                  "stat" : "poss_lost_ctrl",
+                  "statValue" : 11.0
+                }, {
+                  "points" : -1.0,
+                  "stat" : "duel_lost",
+                  "statValue" : 3.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "duel_won",
+                  "statValue" : 11.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "interception_won",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "big_chance_created",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "adjusted_total_att_assist",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.1,
+                  "stat" : "accurate_pass",
+                  "statValue" : 17.0
+                }, {
+                  "points" : 0.1,
+                  "stat" : "successful_final_third_passes",
+                  "statValue" : 7.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "ontarget_scoring_att",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "won_contest",
+                  "statValue" : 3.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "pen_area_entries",
+                  "statValue" : 3.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "penalty_kick_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "big_chance_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saves",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saved_ibox",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "good_high_claim",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "punches",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "dive_save",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.5,
+                  "stat" : "dive_catch",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "cross_not_claimed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "six_second_violation",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 5.0,
+                  "stat" : "gk_smother",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "accurate_keeper_sweeper",
+                  "statValue" : 0.0
+                } ],
+                "playerGameStats" : {
+                  "accuratePass" : 17,
+                  "duelWon" : 11
+                }
+              }
+            }, {
+              "slug" : "francisco-roman-alarcon-suarez",
+              "currentSeason" : {
+                "startYear" : 2023
+              },
+              "activeClub" : {
+                "name" : "Real Betis Balompié"
+              },
+              "so5Score" : {
+                "score" : 72.2,
+                "allAroundStats" : [ {
+                  "points" : 0.0,
+                  "stat" : "mins_played",
+                  "statValue" : 90.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "yellow_card",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -1.0,
+                  "stat" : "fouls",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "was_fouled",
+                  "statValue" : 7.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "error_lead_to_shot",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -2.0,
+                  "stat" : "goals_conceded",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "won_tackle",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "blocked_cross",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "outfielder_block",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 4.0,
+                  "stat" : "double_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 6.0,
+                  "stat" : "triple_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 12.0,
+                  "stat" : "triple_triple",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.5,
+                  "stat" : "poss_lost_ctrl",
+                  "statValue" : 11.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "poss_won",
+                  "statValue" : 2.0
+                }, {
+                  "points" : -0.8,
+                  "stat" : "duel_lost",
+                  "statValue" : 3.0
+                }, {
+                  "points" : 0.8,
+                  "stat" : "duel_won",
+                  "statValue" : 10.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "interception_won",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "big_chance_created",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "adjusted_total_att_assist",
+                  "statValue" : 3.0
+                }, {
+                  "points" : 0.1,
+                  "stat" : "accurate_pass",
+                  "statValue" : 59.0
+                }, {
+                  "points" : 0.3,
+                  "stat" : "successful_final_third_passes",
+                  "statValue" : 27.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "accurate_long_balls",
+                  "statValue" : 5.0
+                }, {
+                  "points" : -0.3,
+                  "stat" : "missed_pass",
+                  "statValue" : 3.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "ontarget_scoring_att",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "won_contest",
+                  "statValue" : 2.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "pen_area_entries",
+                  "statValue" : 7.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "penalty_kick_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "big_chance_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saves",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saved_ibox",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "good_high_claim",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "punches",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "dive_save",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.5,
+                  "stat" : "dive_catch",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "cross_not_claimed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "six_second_violation",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 5.0,
+                  "stat" : "gk_smother",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "accurate_keeper_sweeper",
+                  "statValue" : 0.0
+                } ],
+                "playerGameStats" : {
+                  "accuratePass" : 59,
+                  "duelWon" : 10
+                }
+              }
+            }, {
+              "slug" : "assane-diao-diaoune",
+              "currentSeason" : {
+                "startYear" : 2023
+              },
+              "activeClub" : {
+                "name" : "Real Betis Balompié"
+              },
+              "so5Score" : {
+                "score" : 33.4,
+                "allAroundStats" : [ {
+                  "points" : 0.0,
+                  "stat" : "mins_played",
+                  "statValue" : 45.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "yellow_card",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.5,
+                  "stat" : "fouls",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "was_fouled",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "error_lead_to_shot",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 4.0,
+                  "stat" : "double_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 6.0,
+                  "stat" : "triple_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 12.0,
+                  "stat" : "triple_triple",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.1,
+                  "stat" : "poss_lost_ctrl",
+                  "statValue" : 7.0
+                }, {
+                  "points" : -1.0,
+                  "stat" : "duel_lost",
+                  "statValue" : 6.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "duel_won",
+                  "statValue" : 2.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "interception_won",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "big_chance_created",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "adjusted_total_att_assist",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.1,
+                  "stat" : "accurate_pass",
+                  "statValue" : 11.0
+                }, {
+                  "points" : 0.1,
+                  "stat" : "successful_final_third_passes",
+                  "statValue" : 5.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "ontarget_scoring_att",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "won_contest",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "pen_area_entries",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "penalty_kick_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "big_chance_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saves",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saved_ibox",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "good_high_claim",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "punches",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "dive_save",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.5,
+                  "stat" : "dive_catch",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "cross_not_claimed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "six_second_violation",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 5.0,
+                  "stat" : "gk_smother",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "accurate_keeper_sweeper",
+                  "statValue" : 0.0
+                } ],
+                "playerGameStats" : {
+                  "accuratePass" : 11,
+                  "duelWon" : 2
+                }
+              }
+            } ], [ {
+              "slug" : "nabil-fekir",
+              "currentSeason" : {
+                "startYear" : 2023
+              },
+              "activeClub" : {
+                "name" : "Real Betis Balompié"
+              },
+              "so5Score" : {
+                "score" : 60.0,
+                "allAroundStats" : [ {
+                  "points" : 0.0,
+                  "stat" : "mins_played",
+                  "statValue" : 67.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "yellow_card",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -1.0,
+                  "stat" : "fouls",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "was_fouled",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "error_lead_to_shot",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -2.0,
+                  "stat" : "goals_conceded",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "won_tackle",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "blocked_cross",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.0,
+                  "stat" : "outfielder_block",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 4.0,
+                  "stat" : "double_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 6.0,
+                  "stat" : "triple_double",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 12.0,
+                  "stat" : "triple_triple",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.5,
+                  "stat" : "poss_lost_ctrl",
+                  "statValue" : 13.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "poss_won",
+                  "statValue" : 1.0
+                }, {
+                  "points" : -0.8,
+                  "stat" : "duel_lost",
+                  "statValue" : 5.0
+                }, {
+                  "points" : 0.8,
+                  "stat" : "duel_won",
+                  "statValue" : 2.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "interception_won",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "big_chance_created",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "adjusted_total_att_assist",
+                  "statValue" : 1.0
+                }, {
+                  "points" : 0.1,
+                  "stat" : "accurate_pass",
+                  "statValue" : 27.0
+                }, {
+                  "points" : 0.3,
+                  "stat" : "successful_final_third_passes",
+                  "statValue" : 12.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "accurate_long_balls",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -0.3,
+                  "stat" : "missed_pass",
+                  "statValue" : 5.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "ontarget_scoring_att",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "won_contest",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 0.5,
+                  "stat" : "pen_area_entries",
+                  "statValue" : 5.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "penalty_kick_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "big_chance_missed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saves",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 2.0,
+                  "stat" : "saved_ibox",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "good_high_claim",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 1.5,
+                  "stat" : "punches",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "dive_save",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.5,
+                  "stat" : "dive_catch",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -3.0,
+                  "stat" : "cross_not_claimed",
+                  "statValue" : 0.0
+                }, {
+                  "points" : -5.0,
+                  "stat" : "six_second_violation",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 5.0,
+                  "stat" : "gk_smother",
+                  "statValue" : 0.0
+                }, {
+                  "points" : 3.0,
+                  "stat" : "accurate_keeper_sweeper",
+                  "statValue" : 0.0
+                } ],
+                "playerGameStats" : {
+                  "accuratePass" : 27,
+                  "duelWon" : 2
+                }
+              }
+            } ] ]
+          }
+        }
+      }
+    }
+  }
+}
