@@ -1,0 +1,17 @@
+api-key: 5182799729fa6fb75a06ca888a692824e8c1bab1082d373ca7cfb751040ce41af9cda614906f1d0246b434fcd77eb7a56fb5a60d4a0b9542b5c1b3507absr128
+api: /api/v1
+auth: /auth
+server:
+  port: 8080
+
+allowed-origins: >
+  http://localhost:3000
+
+login-url:
+  https://api.sorare.com/api/v1/users/
+
+graphql-url:
+  "https://api.sorare.com/federation/graphql"
+
+aud: sogaffer-tfg-unican
+
