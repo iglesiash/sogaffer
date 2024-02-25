@@ -7,8 +7,11 @@
 # BlueJ files
 *.ctxt
 
+# VSC files
+.vscode/
+
 # JSON
-*.json
+*-lock.json
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
