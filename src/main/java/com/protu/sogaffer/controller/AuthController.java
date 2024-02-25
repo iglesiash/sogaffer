@@ -11,7 +11,7 @@ import com.protu.sogaffer.model.dto.LoginResponseDto;
 import com.protu.sogaffer.service.AuthService;
 
 @RestController
-@RequestMapping("${auth}/")
+@RequestMapping("${api}/auth")
 @CrossOrigin("http://localhost:3000")
 public class AuthController {
     
