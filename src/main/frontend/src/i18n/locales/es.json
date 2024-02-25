@@ -1,0 +1,10 @@
+{
+    "app.login": "Inicia sesión con tu cuenta de Sorare",
+    "app.email": "Correo electrónico",
+    "app.password": "Contraseña",
+    "app.signIn": "Acceder",
+    "app.signingIn": "Accediendo...",
+    "app.error.required": "Este campo es obligatorio",
+    "app.error.email": "Introduce un email válido",
+    "app.error.credentials": "Credenciales erróneas"
+}
