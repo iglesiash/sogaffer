@@ -1,4 +1,5 @@
 /home/hector/Documents/tfg/sogaffer/src/main/java/com/protu/sogaffer/model/dto/CurrentUser.java
+/home/hector/Documents/tfg/sogaffer/src/main/java/com/protu/sogaffer/dto/login/TokenDto.java
 /home/hector/Documents/tfg/sogaffer/src/main/java/com/protu/sogaffer/controller/AuthController.java
 /home/hector/Documents/tfg/sogaffer/src/main/java/com/protu/sogaffer/model/dto/TokenDto.java
 /home/hector/Documents/tfg/sogaffer/src/main/java/com/protu/sogaffer/model/dto/ResponseDto.java
@@ -10,5 +11,7 @@
 /home/hector/Documents/tfg/sogaffer/src/main/java/com/protu/sogaffer/SogafferApplication.java
 /home/hector/Documents/tfg/sogaffer/src/main/java/com/protu/sogaffer/model/dto/DataSignInDto.java
 /home/hector/Documents/tfg/sogaffer/src/main/java/com/protu/sogaffer/model/dto/LoginResponseDto.java
+/home/hector/Documents/tfg/sogaffer/src/main/java/com/protu/sogaffer/dto/login/CurrentUserDto.java
+/home/hector/Documents/tfg/sogaffer/src/main/java/com/protu/sogaffer/dto/login/SogafferLoginResponse.java
 /home/hector/Documents/tfg/sogaffer/src/main/java/com/protu/sogaffer/dto/login/CredentialsRequestDto.java
 /home/hector/Documents/tfg/sogaffer/src/main/java/com/protu/sogaffer/dto/login/UserProfileDto.java

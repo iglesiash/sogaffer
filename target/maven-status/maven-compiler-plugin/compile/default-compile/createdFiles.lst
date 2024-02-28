@@ -1,4 +1,5 @@
 com/protu/sogaffer/dto/login/UserProfileDto.class
+com/protu/sogaffer/dto/login/SogafferLoginResponse.class
 com/protu/sogaffer/model/dto/CurrentUser.class
 com/protu/sogaffer/model/dto/LoginResponseDto.class
 com/protu/sogaffer/model/dto/ResponseDto.class
@@ -7,9 +8,11 @@ com/protu/sogaffer/dto/login/LoginResponseDto.class
 com/protu/sogaffer/model/dto/TokenDto.class
 com/protu/sogaffer/dto/login/SignInDto.class
 com/protu/sogaffer/service/AuthService$1.class
+com/protu/sogaffer/dto/login/CurrentUserDto.class
 com/protu/sogaffer/controller/AuthController.class
 com/protu/sogaffer/service/AuthService.class
 com/protu/sogaffer/model/dto/UserErrorDto.class
 com/protu/sogaffer/model/dto/DataSignInDto.class
 com/protu/sogaffer/SogafferApplication.class
+com/protu/sogaffer/dto/login/TokenDto.class
 com/protu/sogaffer/dto/login/CredentialsRequestDto.class
