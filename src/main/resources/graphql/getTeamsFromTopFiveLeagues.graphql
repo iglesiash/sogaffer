@@ -1,0 +1,15 @@
+query getTeamsFromTopFiveLeagues($leagueSlug: String!) {
+  football {
+    competition(slug: $leagueSlug) {
+      clubs {
+        nodes {
+          slug
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+      }
+    }
+  }
+}
