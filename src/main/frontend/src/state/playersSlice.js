@@ -2,10 +2,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-// Example async thunk
 export const getPlayerBySlug = createAsyncThunk(
     'players/getPlayer',
-    async (playerSlug, thunkAPI) => {
+    async (playerSlug) => {
         const response = await fetch(`${API_URL}/players/${playerSlug}`, {
             headers: { 'Content-Type': 'application/json' },
         });
@@ -13,10 +12,19 @@ export const getPlayerBySlug = createAsyncThunk(
     }
 );
 
-export const getPlayers = createAsyncThunk(
+export const getPlayersByLeague = createAsyncThunk(
     'players/getPlayers',
-    async (thunkAPI) => {
-        const response = await fetch(`${API_URL}/players/`, {
+    async (leagueSlug) => {
+        const response = await fetch(`${API_URL}/players?league=${leagueSlug}`, {
+            headers: { 'Content-Type': 'application/json' },
+        });
+        return await response.json();
+    }
+);
+export const getPlayer = createAsyncThunk(
+    'players/getPlayer',
+    async (playerSlug) => {
+        const response = await fetch(`${API_URL}/players/${playerSlug}`, {
             headers: { 'Content-Type': 'application/json' },
         });
         return await response.json();
@@ -31,33 +39,26 @@ export const playersSlice = createSlice({
         loading: false,
     },
     reducers: {
-        // Sync reducers here
+        resetPlayers: (state) => {
+            state.players = [];
+        }
     },
     extraReducers: (builder) => {
         // login
         builder
-            .addCase(getPlayers.pending, (state, action) => {
-                state.currentUser = undefined;
-                state.otpSessionChallenge = undefined;
-                state.tcuToken = undefined;
-                state.errors = [];
-
+            .addCase(getPlayersByLeague.pending, (state, action) => {
+                state.players = []
                 state.loading = true;
-            }).addCase(getPlayers.fulfilled, (state, action) => {
-                const signInData = action.payload.data.signIn;
-                state.currentUser = signInData.currentUser;
-                state.otpSessionChallenge = signInData.otpSessionChallenge;
-                state.tcuToken = signInData.tcuToken;
-                state.errors = signInData.errors;
-
+            }).addCase(getPlayersByLeague.fulfilled, (state, action) => {
+                state.players = action.payload;
                 state.loading = false;
-            }).addCase(getPlayers.rejected, (state, action) => {
-                state.otpSessionChallenge = undefined;
-                state.tcuToken = undefined;
-                state.currentUser = undefined;
-                state.errors = action.error;
-
-                state.loading = false;
+            }).addCase(getPlayersByLeague.rejected, (state, action) => {
+                state.players = []
+                state.loading = true;
             }); // builder
     }, // initialState
 }); // createSlice
+
+export const {
+    resetPlayers
+} = playersSlice.actions;

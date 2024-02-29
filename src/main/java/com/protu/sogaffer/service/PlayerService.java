@@ -1,7 +1,8 @@
 package com.protu.sogaffer.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +22,7 @@ import com.protu.sogaffer.dto.players.PlayerListDto;
 import com.protu.sogaffer.dto.players.TeamDto;
 import com.protu.sogaffer.dto.players.TeamsDto;
 import com.protu.sogaffer.utils.GraphqlUtils;
+import com.protu.sogaffer.utils.PlayerDtoComparator;
 import com.protu.sogaffer.utils.RequestUtils;
 
 @Service
@@ -31,42 +33,35 @@ public class PlayerService {
         this.requestUtils = requestUtils;
     }
 
-    public List<PlayerDto> getPlayers() throws JsonProcessingException, InterruptedException, ExecutionException {
-        List<String> leagues = Arrays.asList(
-                new String[] { "laliga-es", "premier-league-gb-eng", "bundesliga-de", "ligue-1-fr", "serie-a-it" });
+    public List<PlayerDto> getPlayersByLeague(String leagueSlug)
+            throws JsonProcessingException, InterruptedException, ExecutionException {
         List<TeamDto> teams = new ArrayList<>();
         List<PlayerDto> players = new ArrayList<>();
+        
 
         ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
         List<CompletableFuture<Void>> futures = new ArrayList<>();
 
-        for (String leagueSlug : leagues) {
-            CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
-                try {
-                    String query = GraphqlUtils.loadQuery("getTeamsFromTopFiveLeagues");
-                    Map<String, Object> variables = new HashMap<>();
-                    variables.put("leagueSlug", leagueSlug);
-                    // TODO: send token from front-end
-                    ResponseEntity<String> response = requestUtils.callGraphQLService(query, variables, "");
-                    JsonNode signInNode = requestUtils.getObjectMapper().readTree(response.getBody()).path("data")
-                            .get("football")
-                            .get("competition").get("clubs");
+        try {
+            String query = GraphqlUtils.loadQuery("getTeamsInLeague");
+            Map<String, Object> variables = new HashMap<>();
+            variables.put("leagueSlug", leagueSlug);
+            // TODO: send token from front-end
+            ResponseEntity<String> response = requestUtils.callGraphQLService(query, variables, "");
+            JsonNode signInNode = requestUtils.getObjectMapper().readTree(response.getBody()).path("data")
+                    .get("football")
+                    .get("competition").get("clubs");
 
-                    TeamsDto teamsDto = requestUtils.getObjectMapper().treeToValue(signInNode, TeamsDto.class);
+            TeamsDto teamsDto = requestUtils.getObjectMapper().treeToValue(signInNode, TeamsDto.class);
 
-                    teams.addAll(teamsDto.getNodes());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                } // try-catch
-            }, executor);
-            futures.add(future);
-        } // for
-
-        CompletableFuture<Void> allFutures = CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
-        allFutures.join(); // Wait for all futures to complete
+            teams.addAll(teamsDto.getNodes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // try-catch
 
         for (TeamDto team : teams) {
+            // Parallelizes the queries for each team
             CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
                 try {
 
@@ -85,23 +80,45 @@ public class PlayerService {
 
                     players.addAll(playerListDto.getNodes());
                 } catch (Exception e) {
-
+                    e.printStackTrace();
                 }
             }, executor);
             futures.add(future);
         }
 
         CompletableFuture<Void> allFutures2 = CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
-        allFutures2.join(); // Wait for all futures to complete
-
+        allFutures2.join(); // Waits for all threads to complete their tasks
         executor.shutdown();
         try {
             executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
         } catch (InterruptedException e) {
-            // Handle exception
+            // TODO: Handle exception
+            e.printStackTrace();
         }
 
+        Collections.sort(players, new PlayerDtoComparator());
         return players;
+    }
+
+    public PlayerDto getPlayer(String playerSlug) {
+        PlayerDto playerDto = null;
+        try {
+            String query = GraphqlUtils.loadQuery("getPlayerInformationQuery");
+            Map<String, Object> variables = new HashMap<>();
+            variables.put("slug", playerSlug);
+            // TODO: send token from front-end
+            ResponseEntity<String> response = requestUtils.callGraphQLService(query, variables, "");
+            JsonNode playerNode = requestUtils.getObjectMapper().readTree(response.getBody()).path("data")
+                    .get("football")
+                    .get("player");
+
+            
+            playerDto = requestUtils.getObjectMapper().treeToValue(playerNode, PlayerDto.class);
+        } catch (IOException e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+        return playerDto;
     }
 
 } // PlayerService
