@@ -1,4 +1,4 @@
-query getTeamsFromTopFiveLeagues($leagueSlug: String!) {
+query getTeamsInLeague($leagueSlug: String!) {
   football {
     competition(slug: $leagueSlug) {
       clubs {

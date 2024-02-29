@@ -13,7 +13,7 @@ export const LoginPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        currentUser && navigate('/home');
+        currentUser && navigate('/');
     }, [currentUser, navigate]);
 
     return (
