@@ -1,0 +1,20 @@
+mutation SignInMutation($input: signInInput!, $aud: String!) {
+  signIn(input: $input) {
+    currentUser {
+      slug
+      profile {
+        clubName
+        pictureUrl
+      }
+      jwtToken(aud: $aud) {
+        token
+        expiredAt
+      }
+    }
+    otpSessionChallenge
+    tcuToken
+    errors {
+      message
+    }
+  }
+}
