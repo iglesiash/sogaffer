@@ -1,11 +1,18 @@
 package com.protu.sogaffer.model.dto;
 
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class LeagueDto {
+    @JsonAlias("displayName")
     private String label;
+
+    @JsonAlias("slug")
     private String value;
+
+    private String logoUrl;
 }

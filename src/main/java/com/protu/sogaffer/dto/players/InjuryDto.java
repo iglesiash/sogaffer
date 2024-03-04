@@ -10,6 +10,7 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class InjuryDto {
     private Boolean active;
+    private String kind;
     private Date startDate;
     private Date expectedEndDate;
 }

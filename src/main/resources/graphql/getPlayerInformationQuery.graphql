@@ -1,17 +1,23 @@
 query getPlayerInfo($slug: String!) {
   football {
     player(slug: $slug) {
-      firstName
-      lastName
       displayName
       birthDate
       age
       position
+      shirtNumber
+      bestFoot
+      height
+      weight
+      playingStatus
+      squaredPictureUrl
       activeClub {
-        code
         name
+        pictureUrl
         domesticLeague {
+          slug
           displayName
+          logoUrl
         }
         upcomingGames(first: 2) {
           date
@@ -19,17 +25,21 @@ query getPlayerInfo($slug: String!) {
           homeTeam {
             ... on Club {
               name
+              pictureUrl
             }
             ... on NationalTeam {
               name
+              pictureUrl
             }
           }
           awayTeam {
             ... on Club {
               name
+              pictureUrl
             }
             ... on NationalTeam {
               name
+              pictureUrl
             }
           }
         }
@@ -38,11 +48,6 @@ query getPlayerInfo($slug: String!) {
         threeLetterCode
         flagUrl
       }
-      shirtNumber
-      bestFoot
-      height
-      weight
-      playingStatus
       suspensions {
         active
         startDate
@@ -50,11 +55,11 @@ query getPlayerInfo($slug: String!) {
         reason
       }
       injuries {
+        kind
         active
         startDate
         expectedEndDate
       }
-      pictureUrl
     }
   }
 }

@@ -1,22 +1,22 @@
 export const LEAGUES = [
     {
-        "icon": "España",
+        "label": "LaLiga",
         "value": "laliga-es"
     },
     {
-        "icon": "Inglaterra",
+        "label": "Premier League",
         "value": "premier-league-gb-eng"
     },
     {
-        "icon": "Alemania",
+        "label": "Bundesliga",
         "value": "bundesliga-de"
     },
     {
-        "icon": "Italia",
+        "label": "Serie A",
         "value": "serie-a-it"
     },
     {
-        "icon": "Francia",
+        "label": "Ligue 1",
         "value": "ligue-1-fr"
     }
 ]
