@@ -12,6 +12,7 @@ import lombok.Data;
 public class ClubDto {
     private String code;
     private String name;
-    private LeagueDto league;
+    private String pictureUrl;
+    private LeagueDto domesticLeague;
     private List<UpcomingGameDto> upcomingGames;
 }

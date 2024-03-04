@@ -22,9 +22,6 @@ img {
 }
 
 @media (max-width: 768px) {
-  img {
-    display: none;
-  }
 
   .col-sm-12.col-md-6 {
     display: flex;

@@ -17,33 +17,31 @@ public class PlayerDto {
 
     @JsonAlias("displayName")
     private String label;
-
-    private String firstName;
-    private String lastName;
+    
     private Date birthDate;
     private Integer age;
     private String position;
-    private ClubDto activeClub;
-    private CountryDto country;
     private Integer shirtNumber;
     private String bestFoot;
     private Integer height;
     private Integer weight;
+    private ClubDto activeClub;
+    private CountryDto country;
     private String playingStatus;
-    private List<SuspensionDto> suspensions;
-    private List<InjuryDto> injuries;
     private String squaredPictureUrl;
     private String pictureUrl;
+    private List<SuspensionDto> suspensions;
+    private List<InjuryDto> injuries;
 
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
-        }
+        } // if
 
         if (!(obj instanceof PlayerDto)) {
             return false;
-        }
+        } // if
 
         PlayerDto that = (PlayerDto) obj;
 
@@ -54,5 +52,4 @@ public class PlayerDto {
     public int hashCode() {
         return Objects.hash(value);
     } // hashCode
-
-}
+} // PlayerDto
