@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import loginImage from '../images/login-image.jpg';
+import loginImage from 'images/login-image.jpg';
 import { useIntl } from 'react-intl';
-import { LoginForm } from "../components/LoginForm/LoginForm";
+import { LoginForm } from "components/LoginForm/LoginForm";
 
 export const LoginPage = () => {
     const { formatMessage: f } = useIntl();

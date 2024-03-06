@@ -10,7 +10,7 @@ export const PlayerImagesContainer = ({ squaredPictureUrl, country, activeClub }
     const LEAGUE_ALT = f({ id: 'player.league' });
     
     return (
-        <div className='col-6' style={{ marginLeft: '1rem' }}>
+        <div className='col-6 ml-1rem'>
             <div style={{ position: 'relative' }}>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <img

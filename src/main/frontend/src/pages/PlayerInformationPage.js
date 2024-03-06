@@ -1,14 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { getPlayerBySlug } from 'state/playersSlice';
 import { PlayerInformation } from '../components/PlayerInformation/PlayerInformation';
-import { getPlayerBySlug } from '../state/playersSlice';
 export const PlayerInformationPage = () => {
 
     const { playerSlug } = useParams();
-
     const { player } = useSelector((state) => state.players);
-
     const dispatch = useDispatch();
 
     /**
@@ -25,4 +23,4 @@ export const PlayerInformationPage = () => {
             />
         </>
     ); // return
-};
+}; // PlayerInformationPage

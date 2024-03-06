@@ -6,43 +6,6 @@ query getPlayersByTeam($teamSlug: String!) {
           squaredPictureUrl
           slug
           displayName
-          age
-          activeClub {
-            name
-            domesticLeague {
-              displayName
-            }
-            upcomingGames(first: 1) {
-              awayTeam {
-                ... on Club {
-                  name
-                }
-              }
-              homeTeam {
-                ... on Club {
-                  name
-                }
-              }
-            }
-          }
-          position
-          country {
-            threeLetterCode
-            flagUrl
-          }
-          averageScore(type: LAST_FIFTEEN_SO5_AVERAGE_SCORE)
-          injuries {
-            active
-            startDate
-            expectedEndDate
-            kind
-          }
-          suspensions {
-            active
-            startDate
-            endDate
-            reason
-          }
         }
       }
     }

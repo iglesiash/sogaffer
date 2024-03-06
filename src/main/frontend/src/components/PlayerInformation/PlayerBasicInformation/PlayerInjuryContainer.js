@@ -22,7 +22,7 @@ export const PlayerInjuryContainer = ({ injuries }) => {
     return (
         <div className='col-6'>
             <div style={{ display: 'flex', alignItems: 'baseline' }}>
-                <i class='las la-ambulance' style={{ fontSize: '2rem', marginRight: '0.5rem' }} />
+                <i classname='las la-ambulance' style={{ fontSize: '2rem', marginRight: '0.5rem' }} />
                 <h2>{ONGOING_INJURIES}</h2>
             </div>
 
