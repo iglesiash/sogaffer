@@ -24,7 +24,7 @@ export const PlayerSuspensionContainer = ({ suspensions }) => {
     const NO_ONGOING_SUSPENSIONS = f({id: 'player.noOngoingSuspensions'});
 
     return (
-        <div className='col-6' style={{ display: 'flex' }}>
+        <div className='col-6'>
             <div>
                 <div style={{ display: 'flex', alignItems: 'baseline' }}>
                     <i className='las la-ban' style={{ fontSize: '2rem', color: 'red', marginRight: '0.5rem' }} />

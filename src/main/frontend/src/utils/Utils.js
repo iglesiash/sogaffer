@@ -19,4 +19,4 @@ export const LEAGUES = [
         "label": "Ligue 1",
         "value": "ligue-1-fr"
     }
-]
+] // Leagues

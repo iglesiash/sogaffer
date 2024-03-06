@@ -1,13 +1,12 @@
-import { PlayerImagesContainer } from './PlayerImagesContainer';
-import { PlayerInfoContainer } from './PlayerInfoContainer';
-import { PlayerInjuryContainer } from './PlayerInjuryContainer';
-import { PlayerSuspensionContainer } from './PlayerSuspensionContainer';
+import { PlayerSuspensionContainer } from "./PlayerSuspensionContainer";
+import { PlayerImagesContainer } from "./PlayerImagesContainer";
+import { PlayerInfoContainer } from "./PlayerInfoContainer";
+import { PlayerInjuryContainer } from "./PlayerInjuryContainer";
 
-export const PlayerBasicInformation = ({ player }) => {
+export const PlayerBasicInformationContainer = ({ player }) => {
     return (
         <>
-            <h1>{player.label}</h1>
-            <div style={{ display: 'flex' }}>
+            <div className='flex'>
                 <PlayerImagesContainer
                     squaredPictureUrl={player.squaredPictureUrl}
                     country={player.country}

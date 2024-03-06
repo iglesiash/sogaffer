@@ -1,18 +1,23 @@
 import { formatDate } from "utils/DateUtils";
 import unknownTeamCrest from 'images/unknown-team.png';
+import styles from './PlayerUpcomingGamesSidebar.module.scss';
+import { useIntl } from 'react-intl';
 
-export const UpcomingGamesSidebar = ({ games }) => {
+export const PlayerUpcomingGames = ({ games }) => {
+
+    const { formatMessage: f } = useIntl();
     return (
-        <div style={{ marginRight: '2rem', marginLeft: '1rem', marginTop: '1rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
-                <h2>Próximos partidos</h2>
+        <div className={styles.container}>
+            <div className='center-h'>
+                <h2>{f({id: 'player.upcomingGames'})}</h2>
             </div>
             {
                 games.map(game => {
                     return (
                         <div style={{ marginBottom: '3rem' }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <div className="col-4">
+                                {/* Home team */}
+                                <div className="col-3">
                                     <img
                                         style={{ height: 'auto' }}
                                         alt='Escudo equipo local'
@@ -22,7 +27,9 @@ export const UpcomingGamesSidebar = ({ games }) => {
                                 <div className="col-1" style={{ textAlign: 'center' }}>
                                     {'-'}
                                 </div>
-                                <div className="col-4">
+
+                                {/* Away team */}
+                                <div className="col-3">
                                     <img
                                         style={{ height: 'auto' }}
                                         alt='Escudo equipo visitante'
@@ -30,11 +37,12 @@ export const UpcomingGamesSidebar = ({ games }) => {
                                     />
                                 </div>
                             </div>
+                            {/* Team names */}
                             <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '1rem', alignItems: 'center', textAlign: 'center' }}>
-                                <div className="col-4">
+                                <div className="col-3">
                                     {game.homeTeam.name}
                                 </div>
-                                <div className="col-4">
+                                <div className="col-3">
                                     {game.awayTeam.name}
                                 </div>
                             </div>
@@ -42,11 +50,11 @@ export const UpcomingGamesSidebar = ({ games }) => {
 
                             <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column' }}>
                                 <div>
-                                    <i className="las la-map-marker" style={{ marginRight: '10px' }}></i>
+                                    <i className="las la-map-marker mr-1rem"></i>
                                     {game.venue}
                                 </div>
                                 <div>
-                                    <i className="las la-calendar" style={{ marginRight: '10px' }} />
+                                    <i className="las la-calendar mr-1rem" />
                                     {formatDate(game.date, 'es', { dateStyle: 'long', timeStyle: 'short' }) + "h"}
                                 </div>
                             </div>
@@ -56,4 +64,4 @@ export const UpcomingGamesSidebar = ({ games }) => {
             }
         </div>
     ); // return
-} // UpcomingGamesSidebar
+} // PlayerUpcomingGames
