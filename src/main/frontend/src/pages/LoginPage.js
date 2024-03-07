@@ -9,12 +9,14 @@ export const LoginPage = () => {
     const { formatMessage: f } = useIntl();
     const LOGIN_LABEL = f({ id: 'app.login' });
 
-    const { currentUser } = useSelector(state => state.auth);
     const navigate = useNavigate();
 
+    const { currentUser } = useSelector(state => state.auth);
+
     useEffect(() => {
-        currentUser && navigate('/');
-    }, [currentUser, navigate]);
+        const token = localStorage.getItem("access-token");
+        token && navigate('/');
+    }, [currentUser]);
 
     return (
         <div className='page-container'>

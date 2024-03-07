@@ -57,18 +57,18 @@ export const LoginForm = () => {
                 </button>
             </form>
             {
-                errors.map(error => {
+                errors?.map(error => {
                     let formError = null;
                     if (error.message === 'invalid') {
                         formError = (
                             <div className='error-message' key={error.id}>
-                                {f({id: 'app.error.credentials'})}
+                                {f({ id: 'app.error.credentials' })}
                             </div>
-                        ); // return
+                        ); // formError
                     } // if
                     return formError;
-                })
-            } { /* errors.map */}
+                }) // map
+            }
         </>
     ); // return
 } // LoginForm

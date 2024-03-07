@@ -31,7 +31,7 @@ export const authSlice = createSlice({
     extraReducers: (builder) => {
         // login
         builder
-            .addCase(login.pending, (state, action) => {
+            .addCase(login.pending, (state) => {
                 state.currentUser = undefined;
                 state.otpSessionChallenge = undefined;
                 state.tcuToken = undefined;
@@ -45,12 +45,14 @@ export const authSlice = createSlice({
                 state.tcuToken = signInData.tcuToken;
                 state.errors = signInData.errors;
 
+                localStorage.setItem('access-token', state.currentUser.jwtToken.token);
+
                 state.loading = false;
-            }).addCase(login.rejected, (state, action) => {
+            }).addCase(login.rejected, (state) => {
                 state.otpSessionChallenge = undefined;
                 state.tcuToken = undefined;
                 state.currentUser = undefined;
-                state.errors = action.error;
+                state.errors = [];
 
                 state.loading = false;
             }); // builder
