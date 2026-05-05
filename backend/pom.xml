@@ -36,6 +36,8 @@
 
 	<properties>
 		<java.version>21</java.version>
+		<node.version>v20.19.0</node.version>
+		<frontend.directory>../frontend/</frontend.directory>
 	</properties>
 
 	<dependencies>
@@ -49,6 +51,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -56,8 +68,77 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>1.7.6</version>
+
+				<configuration>
+					<nodeVersion>${node.version}</nodeVersion>
+					<workingDirectory>${frontend.directory}</workingDirectory>
+					<installDirectory>${project.build.directory}</installDirectory>
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>install-frontend-tools</id>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+					</execution>
+
+					<execution>
+						<id>npm-install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>install</arguments>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>build-frontend</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<phase>prepare-package</phase>
+						<configuration>
+							<arguments>run build</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>position-react-build</id>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<phase>prepare-package</phase>
+						<configuration>
+							<outputDirectory>${project.build.outputDirectory}/static</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${frontend.directory}/dist</directory>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
