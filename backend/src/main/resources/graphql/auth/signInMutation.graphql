@@ -1,0 +1,14 @@
+mutation SignInMutation($input: signInInput!) {
+    signIn(input: $input) {
+        currentUser {
+            slug
+        }
+        jwtToken(aud: "$aud") {
+            token
+            expiredAt
+        }
+        errors {
+            message
+        }
+    }
+}

@@ -6,6 +6,7 @@ import es.unican.hgi834.sogaffer.model.dto.sorare.graphql.SorareGraphQLError;
 import es.unican.hgi834.sogaffer.model.dto.sorare.graphql.SorareGraphQLResponse;
 import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareSignInWrapperDto;
 import es.unican.hgi834.sogaffer.service.auth.ISorareGraphQLService;
+import es.unican.hgi834.sogaffer.utils.GraphQLQueryLoader;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
@@ -25,22 +26,7 @@ public class SorareGraphQLService implements ISorareGraphQLService {
 
     @Override
     public SorareSignInWrapperDto signIn(LoginDto loginDto) {
-        String signInMutation = """
-                mutation SignInMutation($input: signInInput!) {
-                  signIn(input: $input) {
-                    currentUser {
-                      slug
-                    }
-                    jwtToken(aud: "%s") {
-                      token
-                      expiredAt
-                    }
-                    errors {
-                      message
-                    }
-                  }
-                }
-                """.formatted("SoGaffer");
+        String signInMutation = GraphQLQueryLoader.getSignInMutation();
 
         Map<String, Object> variables = Map.of("input", loginDto);
 
