@@ -1,5 +1,8 @@
 ## Backend
 
+# Sensitive files
+**/application-local.properties
+
 # Compiled class file
 *.class
 

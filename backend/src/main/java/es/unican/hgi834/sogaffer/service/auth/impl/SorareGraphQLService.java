@@ -2,7 +2,8 @@ package es.unican.hgi834.sogaffer.service.auth.impl;
 
 import es.unican.hgi834.sogaffer.exception.SorareAuthException;
 import es.unican.hgi834.sogaffer.model.dto.auth.LoginDto;
-import es.unican.hgi834.sogaffer.model.dto.sorare.graphql.SorareGraphQLError;
+import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareSignInDto;
+import es.unican.hgi834.sogaffer.model.dto.sorare.error.SorareGraphQLError;
 import es.unican.hgi834.sogaffer.model.dto.sorare.graphql.SorareGraphQLResponse;
 import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareSignInWrapperDto;
 import es.unican.hgi834.sogaffer.service.auth.ISorareGraphQLService;
@@ -25,7 +26,7 @@ public class SorareGraphQLService implements ISorareGraphQLService {
     }
 
     @Override
-    public SorareSignInWrapperDto signIn(LoginDto loginDto) {
+    public SorareSignInDto signIn(LoginDto loginDto) {
         String signInMutation = GraphQLQueryLoader.getSignInMutation();
 
         Map<String, Object> variables = Map.of("input", loginDto);
@@ -48,6 +49,11 @@ public class SorareGraphQLService implements ISorareGraphQLService {
             throw new SorareAuthException(errors);
         }
 
-        return response.data();
+        SorareSignInDto signInData = response.data().signIn();
+        if (!signInData.errors().isEmpty()) {
+            throw new SorareAuthException(signInData.errors());
+        }
+
+        return response.data().signIn();
     }
 }

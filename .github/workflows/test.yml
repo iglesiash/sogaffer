@@ -21,6 +21,8 @@ jobs:
           cache: maven
 
       - name: Build backend (includes frontend)
+        env:
+          SOGAFFER_JWT_SECRET: ${{ secrets.SOGAFFER_JWT_SECRET }}
         run: mvn -B clean package -f backend/pom.xml
 
       - name: Upload artifact

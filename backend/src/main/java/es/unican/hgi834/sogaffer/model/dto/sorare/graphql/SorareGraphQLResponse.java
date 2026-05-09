@@ -1,5 +1,7 @@
 package es.unican.hgi834.sogaffer.model.dto.sorare.graphql;
 
+import es.unican.hgi834.sogaffer.model.dto.sorare.error.SorareGraphQLError;
+
 import java.util.List;
 
 public record SorareGraphQLResponse<T>(T data,

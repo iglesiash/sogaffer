@@ -1,8 +1,7 @@
 package es.unican.hgi834.sogaffer.service.auth.impl;
 
 import es.unican.hgi834.sogaffer.model.dto.auth.AccessTokenDto;
-import es.unican.hgi834.sogaffer.model.dto.sorare.graphql.SorareGraphQLResponse;
-import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareSignInWrapperDto;
+import es.unican.hgi834.sogaffer.service.auth.IJwtTokenService;
 import es.unican.hgi834.sogaffer.service.auth.ISorareAuthService;
 import es.unican.hgi834.sogaffer.model.dto.auth.LoginDto;
 import es.unican.hgi834.sogaffer.service.auth.IAuthService;
@@ -15,11 +14,14 @@ public class AuthService implements IAuthService {
 
     private final ISorareAuthService sorareAuthService;
     private final ISorareGraphQLService sorareGraphQLService;
+    private final IJwtTokenService jwtTokenService;
 
     public AuthService(ISorareAuthService sorareAuthService,
-                       ISorareGraphQLService sorareGraphQLService) {
+                       ISorareGraphQLService sorareGraphQLService,
+                       IJwtTokenService jwtTokenService) {
         this.sorareAuthService = sorareAuthService;
         this.sorareGraphQLService = sorareGraphQLService;
+        this.jwtTokenService = jwtTokenService;
     }
 
     @Override
@@ -30,8 +32,8 @@ public class AuthService implements IAuthService {
         String salt = sorareAuthService.getSalt(email).salt();
         String hashedPassword = BCrypt.hashpw(password, salt);
 
-        SorareSignInWrapperDto signInDto =
-                sorareGraphQLService.signIn(new LoginDto(email, hashedPassword));
-        return new AccessTokenDto(signInDto.signIn().jwtToken().token(), 1);
+        sorareGraphQLService.signIn(new LoginDto(email, hashedPassword));
+
+        return jwtTokenService.generateToken(email);
     }
 }
