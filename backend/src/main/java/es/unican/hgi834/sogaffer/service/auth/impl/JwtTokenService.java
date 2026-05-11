@@ -1,5 +1,6 @@
 package es.unican.hgi834.sogaffer.service.auth.impl;
 
+import es.unican.hgi834.sogaffer.configuration.JwtPropertiesConfiguration;
 import es.unican.hgi834.sogaffer.model.dto.auth.AccessTokenDto;
 import es.unican.hgi834.sogaffer.service.auth.IJwtTokenService;
 import io.jsonwebtoken.Jwts;
@@ -16,25 +17,30 @@ import javax.crypto.SecretKey;
 @Service
 public class JwtTokenService implements IJwtTokenService {
 
-    @Value("${sogaffer.jwt.access.token}")
-    private String secretKey;
+    private final String secretKey;
+    private final String aud;
+    private final int durationTime;
 
-    private static final int EXPIRATION_TIME_MS = 1000 * 60 * 60; // 1 hour
+    public JwtTokenService(JwtPropertiesConfiguration jwtConfiguration) {
+        this.secretKey = jwtConfiguration.getSecret();
+        this.aud = jwtConfiguration.getAud();
+        this.durationTime = jwtConfiguration.getDuration();
+    }
 
     @Override
     public AccessTokenDto generateToken(String username) {
         Date now = new Date();
-        Date expiration = new Date(now.getTime() + EXPIRATION_TIME_MS);
+        Date expiration = new Date(now.getTime() + durationTime * 1000L); // Convert to milliseconds
 
         String token = Jwts.builder()
                 .subject(username)
                 .issuedAt(now)
                 .expiration(expiration)
-                .issuer("SoGaffer")
+                .issuer(aud)
                 .signWith(getSigningKey())
                 .compact();
 
-        return new AccessTokenDto(token, EXPIRATION_TIME_MS);
+        return new AccessTokenDto(token, durationTime);
     }
 
     @Override

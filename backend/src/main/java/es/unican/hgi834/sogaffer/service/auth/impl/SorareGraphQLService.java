@@ -1,5 +1,6 @@
 package es.unican.hgi834.sogaffer.service.auth.impl;
 
+import es.unican.hgi834.sogaffer.configuration.JwtPropertiesConfiguration;
 import es.unican.hgi834.sogaffer.exception.SorareAuthException;
 import es.unican.hgi834.sogaffer.model.dto.auth.LoginDto;
 import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareSignInDto;
@@ -20,16 +21,21 @@ import java.util.Map;
 public class SorareGraphQLService implements ISorareGraphQLService {
 
     private final RestClient restClient;
+    private final String aud;
 
-    public SorareGraphQLService(@Qualifier("graphQLClient") RestClient restClient) {
+    public SorareGraphQLService(@Qualifier("graphQLClient") RestClient restClient,
+                                JwtPropertiesConfiguration jwtPropertiesConfiguration) {
         this.restClient = restClient;
+        this.aud = jwtPropertiesConfiguration.getAud();
     }
 
     @Override
     public SorareSignInDto signIn(LoginDto loginDto) {
         String signInMutation = GraphQLQueryLoader.getSignInMutation();
 
-        Map<String, Object> variables = Map.of("input", loginDto);
+        Map<String, Object> variables = Map.of(
+                "input", loginDto,
+                "aud", aud);
 
         Map<String, Object> body = Map.of(
                 "operationName", "SignInMutation",
@@ -54,6 +60,6 @@ public class SorareGraphQLService implements ISorareGraphQLService {
             throw new SorareAuthException(signInData.errors());
         }
 
-        return response.data().signIn();
+        return signInData;
     }
 }

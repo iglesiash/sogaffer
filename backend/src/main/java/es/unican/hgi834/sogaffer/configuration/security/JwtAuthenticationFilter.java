@@ -1,5 +1,6 @@
 package es.unican.hgi834.sogaffer.configuration.security;
 
+import es.unican.hgi834.sogaffer.configuration.JwtPropertiesConfiguration;
 import es.unican.hgi834.sogaffer.service.auth.IJwtTokenService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -25,9 +26,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final static String BEARER_PREFIX = "Bearer ";
 
     private final IJwtTokenService jwtTokenService;
+    private static String aud;
 
-    public JwtAuthenticationFilter(IJwtTokenService jwtTokenService) {
+    public JwtAuthenticationFilter(IJwtTokenService jwtTokenService,
+                                   JwtPropertiesConfiguration jwtConfiguration) {
         this.jwtTokenService = jwtTokenService;
+        aud = jwtConfiguration.getAud();
     }
 
 
@@ -70,7 +74,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String issuer = claims.getIssuer();
         Date expirationDate = claims.getExpiration();
 
-        if (issuer == null || !issuer.equals("SoGaffer")) {
+        if (issuer == null || !issuer.equals(aud)) {
             throw new SecurityException("Invalid issuer");
         }
 
