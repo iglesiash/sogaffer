@@ -1,4 +1,6 @@
 package es.unican.hgi834.sogaffer.model.dto.sorare.auth;
 
-public record SorareCurrentUserDto(String slug) {
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record SorareCurrentUserDto(@JsonProperty("id") String sorareId) {
 }
