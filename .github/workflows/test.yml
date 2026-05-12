@@ -1,15 +1,29 @@
 name: Build Backend + Frontend
-
 on:
   push:
     branches: [ "main", "develop" ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: sogaffer_test
+          MYSQL_USER: sogaffer
+          MYSQL_PASSWORD: sogaffer
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
     steps:
-    
+
       - name: Checkout repo
         uses: actions/checkout@v4
 
@@ -22,6 +36,9 @@ jobs:
 
       - name: Build backend (includes frontend)
         env:
+          DB_URL: jdbc:mysql://localhost:3306/sogaffer_test
+          DB_USERNAME: sogaffer
+          DB_PASSWORD: sogaffer
           SOGAFFER_JWT_SECRET: ${{ secrets.SOGAFFER_JWT_SECRET }}
         run: mvn -B clean package -f backend/pom.xml
 
