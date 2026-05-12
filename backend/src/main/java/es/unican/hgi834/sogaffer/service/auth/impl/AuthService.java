@@ -50,6 +50,15 @@ public class AuthService implements IAuthService {
         SorareToken sorareToken = new SorareToken();
 
         String userId = signInDto.currentUser().sorareId();
+        User user = findUser(userId);
+        sorareToken.setUser(user);
+        sorareToken.setToken(signInDto.jwtToken().token());
+        sorareTokenRepository.save(sorareToken);
+
+        return jwtTokenService.generateToken(userId);
+    }
+
+    private User findUser(String userId) {
         UUID userUUID = UUID.fromString(userId.replace("User:", ""));
         User user = userRepository.findBySorareId(userUUID);
 
@@ -60,10 +69,6 @@ public class AuthService implements IAuthService {
             user = userRepository.save(user);
         }
 
-        sorareToken.setUser(user);
-        sorareToken.setToken(signInDto.jwtToken().token());
-        sorareTokenRepository.save(sorareToken);
-
-        return jwtTokenService.generateToken(userId);
+        return user;
     }
 }
