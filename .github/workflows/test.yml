@@ -40,6 +40,7 @@ jobs:
           DB_USERNAME: sogaffer
           DB_PASSWORD: sogaffer
           SOGAFFER_JWT_SECRET: ${{ secrets.SOGAFFER_JWT_SECRET }}
+          SOGAFFER_ENCRYPTION_SECRET: ${{ secrets.SOGAFFER_ENCRYPTION_SECRET }}
         run: mvn -B clean package -f backend/pom.xml
 
       - name: Upload artifact

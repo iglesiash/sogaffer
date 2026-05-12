@@ -6,11 +6,8 @@ import es.unican.hgi834.sogaffer.model.entity.SorareToken;
 import es.unican.hgi834.sogaffer.model.entity.User;
 import es.unican.hgi834.sogaffer.repository.ISorareTokenRepository;
 import es.unican.hgi834.sogaffer.repository.IUserRepository;
-import es.unican.hgi834.sogaffer.service.auth.IJwtTokenService;
-import es.unican.hgi834.sogaffer.service.auth.ISorareAuthService;
+import es.unican.hgi834.sogaffer.service.auth.*;
 import es.unican.hgi834.sogaffer.model.dto.auth.LoginDto;
-import es.unican.hgi834.sogaffer.service.auth.IAuthService;
-import es.unican.hgi834.sogaffer.service.auth.ISorareGraphQLService;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +19,7 @@ public class AuthService implements IAuthService {
     private final ISorareAuthService sorareAuthService;
     private final ISorareGraphQLService sorareGraphQLService;
     private final IJwtTokenService jwtTokenService;
+    private final IEncryptionService encryptionService;
 
     private final IUserRepository userRepository;
     private final ISorareTokenRepository sorareTokenRepository;
@@ -29,11 +27,13 @@ public class AuthService implements IAuthService {
     public AuthService(ISorareAuthService sorareAuthService,
                        ISorareGraphQLService sorareGraphQLService,
                        IJwtTokenService jwtTokenService,
+                       IEncryptionService encryptionService,
                        IUserRepository userRepository,
                        ISorareTokenRepository sorareTokenRepository) {
         this.sorareAuthService = sorareAuthService;
         this.sorareGraphQLService = sorareGraphQLService;
         this.jwtTokenService = jwtTokenService;
+        this.encryptionService = encryptionService;
         this.userRepository = userRepository;
         this.sorareTokenRepository = sorareTokenRepository;
     }
@@ -49,10 +49,14 @@ public class AuthService implements IAuthService {
         SorareSignInDto signInDto = sorareGraphQLService.signIn(new LoginDto(email, hashedPassword));
         SorareToken sorareToken = new SorareToken();
 
+        // Find and link user to token
         String userId = signInDto.currentUser().sorareId();
         User user = findUser(userId);
         sorareToken.setUser(user);
-        sorareToken.setToken(signInDto.jwtToken().token());
+
+        // Encrypt and persist token
+        String encryptedToken = encryptToken(signInDto.jwtToken().token());
+        sorareToken.setToken(encryptedToken);
         sorareTokenRepository.save(sorareToken);
 
         return jwtTokenService.generateToken(userId);
@@ -70,5 +74,17 @@ public class AuthService implements IAuthService {
         }
 
         return user;
+    }
+
+    private String encryptToken(String token) {
+        String encryptedToken;
+        try {
+            encryptedToken = encryptionService.encrypt(token);
+        } catch (Exception e) {
+            // TODO: custom exception
+            throw new RuntimeException("Error encrypting token", e);
+        }
+
+        return encryptedToken;
     }
 }
