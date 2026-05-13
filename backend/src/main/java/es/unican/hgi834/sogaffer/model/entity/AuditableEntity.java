@@ -14,23 +14,11 @@ public abstract class AuditableEntity {
     @Column(name = "CREATED_AT", nullable = false, updatable = false)
     private Instant createdAt;
 
-    @Column(name = "UPDATED_AT")
-    private Instant updatedAt;
-
-    @PreUpdate
-    protected void onUpdate() {
-        updatedAt = Instant.now();
-    }
-
     public Instant getCreatedAt() {
         return createdAt;
     }
 
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
     }
 }

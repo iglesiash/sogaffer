@@ -20,6 +20,12 @@ public class SorareToken extends AuditableEntity {
     @Column(nullable = false)
     private String token;
 
+    @Column(name = "EXPIRATION_DATE", nullable = false)
+    private Instant expirationDate;
+
+    @Column(name = "IS_VALID", nullable = false)
+    private boolean isValid;
+
     public int getId() {
         return id;
     }
@@ -42,5 +48,21 @@ public class SorareToken extends AuditableEntity {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public Instant getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(Instant expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public boolean isValid() {
+        return isValid;
+    }
+
+    public void setValid(boolean valid) {
+        isValid = valid;
     }
 }

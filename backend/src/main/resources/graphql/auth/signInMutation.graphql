@@ -2,9 +2,11 @@ mutation SignInMutation($input: signInInput!, $aud: String!) {
     signIn(input: $input) {
         currentUser {
             id
+            email
         }
         jwtToken(aud: $aud) {
             token
+            expiredAt
         }
         errors {
             message
