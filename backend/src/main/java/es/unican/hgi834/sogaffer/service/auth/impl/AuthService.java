@@ -1,6 +1,7 @@
 package es.unican.hgi834.sogaffer.service.auth.impl;
 
 import es.unican.hgi834.sogaffer.model.dto.auth.AccessTokenDto;
+import es.unican.hgi834.sogaffer.model.dto.auth.AccessRefreshTokenDto;
 import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareCurrentUserDto;
 import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareJwtTokenDto;
 import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareSignInDto;
@@ -24,6 +25,7 @@ public class AuthService implements IAuthService {
     private final ISorareGraphQLService sorareGraphQLService;
     private final IJwtTokenService jwtTokenService;
     private final IEncryptionService encryptionService;
+    private final IRefreshTokenService refreshTokenService;
 
     // TODO: fetch from service instead of repository
     private final IUserRepository userRepository;
@@ -33,21 +35,24 @@ public class AuthService implements IAuthService {
                        ISorareGraphQLService sorareGraphQLService,
                        IJwtTokenService jwtTokenService,
                        IEncryptionService encryptionService,
+                       IRefreshTokenService refreshTokenService,
                        IUserRepository userRepository,
                        ISorareTokenRepository sorareTokenRepository) {
         this.sorareAuthService = sorareAuthService;
         this.sorareGraphQLService = sorareGraphQLService;
         this.jwtTokenService = jwtTokenService;
         this.encryptionService = encryptionService;
+        this.refreshTokenService = refreshTokenService;
         this.userRepository = userRepository;
         this.sorareTokenRepository = sorareTokenRepository;
     }
 
     @Override
     @Transactional
-    public AccessTokenDto login(LoginDto loginDto) {
+    public AccessRefreshTokenDto login(LoginDto loginDto) {
         String email = loginDto.email();
         SorareToken existingSorareToken = sorareTokenRepository.findByUserEmail(email);
+        User user = null;
 
         // If no valid token exists, call Sorare
         if (existingSorareToken == null) {
@@ -56,13 +61,22 @@ public class AuthService implements IAuthService {
             String hashedPassword = BCrypt.hashpw(password, salt);
 
             SorareSignInDto signInDto = sorareGraphQLService.signIn(new LoginDto(email, hashedPassword));
-            User user = getUserBySorareSignInDto(signInDto.currentUser());
+            user = getUserBySorareSignInDto(signInDto.currentUser());
 
             invalidateActiveTokens(user);
-            createToken(user, signInDto.jwtToken());
+            persistSorareToken(user, signInDto.jwtToken());
         }
 
-        return jwtTokenService.generateToken(email);
+        // If the user is null, it means that a valid token already exists; fetch the user by email
+        if (user == null) {
+            user = userRepository.findByEmail(email);
+        }
+
+        // Generate both access and refresh tokens
+        String refreshToken = refreshTokenService.generateRefreshToken(user);
+        AccessTokenDto accessToken = jwtTokenService.generateToken(email);
+
+        return new AccessRefreshTokenDto(accessToken, refreshToken);
     }
 
     private void invalidateActiveTokens(User user) {
@@ -73,7 +87,6 @@ public class AuthService implements IAuthService {
     }
 
     private User getUserBySorareSignInDto(SorareCurrentUserDto currentUser) {
-        String email = currentUser.email();
         UUID userUUID = UUID.fromString(currentUser.sorareId().replace("User:", ""));
 
         // Upsert user according to the Sorare ID
@@ -85,11 +98,11 @@ public class AuthService implements IAuthService {
         }
 
         // Set email whatsoever
-        user.setEmail(email);
+        user.setEmail(currentUser.email());
         return userRepository.save(user);
     }
 
-    private void createToken(User user, SorareJwtTokenDto jwtTokenDto) {
+    private void persistSorareToken(User user, SorareJwtTokenDto jwtTokenDto) {
         SorareToken sorareToken = new SorareToken();
         sorareToken.setUser(user);
         sorareToken.setToken(encryptToken(jwtTokenDto.token()));
