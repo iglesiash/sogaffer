@@ -2,21 +2,13 @@ package es.unican.hgi834.sogaffer.service.auth.impl;
 
 import es.unican.hgi834.sogaffer.model.dto.auth.AccessTokenDto;
 import es.unican.hgi834.sogaffer.model.dto.auth.AccessRefreshTokenDto;
-import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareCurrentUserDto;
-import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareJwtTokenDto;
 import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareSignInDto;
 import es.unican.hgi834.sogaffer.model.entity.SorareToken;
 import es.unican.hgi834.sogaffer.model.entity.User;
-import es.unican.hgi834.sogaffer.repository.ISorareTokenRepository;
-import es.unican.hgi834.sogaffer.repository.IUserRepository;
 import es.unican.hgi834.sogaffer.service.auth.*;
 import es.unican.hgi834.sogaffer.model.dto.auth.LoginDto;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Set;
-import java.util.UUID;
 
 @Service
 public class AuthService implements IAuthService {
@@ -24,34 +16,28 @@ public class AuthService implements IAuthService {
     private final ISorareAuthService sorareAuthService;
     private final ISorareGraphQLService sorareGraphQLService;
     private final IJwtTokenService jwtTokenService;
-    private final IEncryptionService encryptionService;
     private final IRefreshTokenService refreshTokenService;
-
-    // TODO: fetch from service instead of repository
-    private final IUserRepository userRepository;
-    private final ISorareTokenRepository sorareTokenRepository;
+    private final IUserService userService;
+    private final ISorareTokenService sorareTokenService;
 
     public AuthService(ISorareAuthService sorareAuthService,
                        ISorareGraphQLService sorareGraphQLService,
                        IJwtTokenService jwtTokenService,
-                       IEncryptionService encryptionService,
                        IRefreshTokenService refreshTokenService,
-                       IUserRepository userRepository,
-                       ISorareTokenRepository sorareTokenRepository) {
+                       IUserService userService,
+                       ISorareTokenService sorareTokenService) {
         this.sorareAuthService = sorareAuthService;
         this.sorareGraphQLService = sorareGraphQLService;
         this.jwtTokenService = jwtTokenService;
-        this.encryptionService = encryptionService;
         this.refreshTokenService = refreshTokenService;
-        this.userRepository = userRepository;
-        this.sorareTokenRepository = sorareTokenRepository;
+        this.userService = userService;
+        this.sorareTokenService = sorareTokenService;
     }
 
     @Override
-    @Transactional
     public AccessRefreshTokenDto login(LoginDto loginDto) {
         String email = loginDto.email();
-        SorareToken existingSorareToken = sorareTokenRepository.findByUserEmail(email);
+        SorareToken existingSorareToken = sorareTokenService.getSorareTokenByEmail(email);
         User user = null;
 
         // If no valid token exists, call Sorare
@@ -61,15 +47,15 @@ public class AuthService implements IAuthService {
             String hashedPassword = BCrypt.hashpw(password, salt);
 
             SorareSignInDto signInDto = sorareGraphQLService.signIn(new LoginDto(email, hashedPassword));
-            user = getUserBySorareSignInDto(signInDto.currentUser());
+            user = userService.getUserBySorareSignInDto(signInDto.currentUser());
 
-            invalidateActiveTokens(user);
-            persistSorareToken(user, signInDto.jwtToken());
+            sorareTokenService.invalidateActiveTokens(user.getId());
+            sorareTokenService.persistSorareToken(user, signInDto.jwtToken());
         }
 
         // If the user is null, it means that a valid token already exists; fetch the user by email
         if (user == null) {
-            user = userRepository.findByEmail(email);
+            user = userService.getByEmail(email);
         }
 
         // Generate both access and refresh tokens
@@ -77,50 +63,5 @@ public class AuthService implements IAuthService {
         AccessTokenDto accessToken = jwtTokenService.generateToken(email);
 
         return new AccessRefreshTokenDto(accessToken, refreshToken);
-    }
-
-    private void invalidateActiveTokens(User user) {
-        Set<SorareToken> activeTokens = sorareTokenRepository.findActiveTokensByUserId(user.getId());
-        activeTokens.forEach(token -> token.setValid(false));
-
-        sorareTokenRepository.saveAll(activeTokens);
-    }
-
-    private User getUserBySorareSignInDto(SorareCurrentUserDto currentUser) {
-        UUID userUUID = UUID.fromString(currentUser.sorareId().replace("User:", ""));
-
-        // Upsert user according to the Sorare ID
-        User user = userRepository.findBySorareId(userUUID);
-        if (user == null) {
-            // Insert
-            user = new User();
-            user.setSorareId(userUUID);
-        }
-
-        // Set email whatsoever
-        user.setEmail(currentUser.email());
-        return userRepository.save(user);
-    }
-
-    private void persistSorareToken(User user, SorareJwtTokenDto jwtTokenDto) {
-        SorareToken sorareToken = new SorareToken();
-        sorareToken.setUser(user);
-        sorareToken.setToken(encryptToken(jwtTokenDto.token()));
-        sorareToken.setExpirationDate(jwtTokenDto.expiredAt());
-        sorareToken.setValid(true);
-
-        sorareTokenRepository.save(sorareToken);
-    }
-
-    private String encryptToken(String token) {
-        String encryptedToken;
-        try {
-            encryptedToken = encryptionService.encrypt(token);
-        } catch (Exception e) {
-            // TODO: custom exception
-            throw new RuntimeException("Error encrypting token", e);
-        }
-
-        return encryptedToken;
     }
 }
