@@ -8,7 +8,10 @@ import java.util.Set;
 
 public interface ISorareTokenRepository extends JpaRepository<SorareToken, Long> {
 
-    @Query(value = "SELECT st from SorareToken st WHERE st.user.email = :email AND st.isValid = true")
+    @Query(value = "SELECT st from SorareToken st " +
+            "WHERE st.user.email = :email " +
+            "AND st.isValid = true " +
+            "AND st.expirationDate >= CURDATE()")
     SorareToken findByUserEmail(String email);
 
     @Query(value = "SELECT st from SorareToken st WHERE st.user.id = :userId AND st.isValid = true")
