@@ -1,8 +1,9 @@
 package es.unican.hgi834.sogaffer.service.auth.impl;
 
+import es.unican.hgi834.sogaffer.model.dto.auth.UserDto;
 import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareJwtTokenDto;
 import es.unican.hgi834.sogaffer.model.entity.SorareToken;
-import es.unican.hgi834.sogaffer.model.entity.User;
+import es.unican.hgi834.sogaffer.model.mapper.UserMapper;
 import es.unican.hgi834.sogaffer.repository.ISorareTokenRepository;
 import es.unican.hgi834.sogaffer.service.auth.IEncryptionService;
 import es.unican.hgi834.sogaffer.service.auth.ISorareTokenService;
@@ -31,9 +32,9 @@ public class SorareTokenService implements ISorareTokenService {
     }
 
     @Override
-    public void persistSorareToken(User user, SorareJwtTokenDto jwtTokenDto) {
+    public void persistSorareToken(UserDto user, SorareJwtTokenDto jwtTokenDto) {
         SorareToken sorareToken = new SorareToken();
-        sorareToken.setUser(user);
+        sorareToken.setUser(UserMapper.toEntity(user));
         sorareToken.setToken(encryptToken(jwtTokenDto.token()));
         sorareToken.setExpirationDate(jwtTokenDto.expiredAt());
         sorareToken.setValid(true);

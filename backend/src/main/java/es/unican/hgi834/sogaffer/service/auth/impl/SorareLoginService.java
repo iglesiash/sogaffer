@@ -1,11 +1,9 @@
 package es.unican.hgi834.sogaffer.service.auth.impl;
 
 import es.unican.hgi834.sogaffer.model.dto.auth.LoginDto;
+import es.unican.hgi834.sogaffer.model.dto.auth.UserDto;
 import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareSignInDto;
-import es.unican.hgi834.sogaffer.model.entity.SorareToken;
-import es.unican.hgi834.sogaffer.model.entity.User;
 import es.unican.hgi834.sogaffer.service.auth.*;
-import org.springframework.lang.NonNull;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
@@ -28,15 +26,15 @@ public class SorareLoginService implements ISorareLoginService {
     }
 
     @Override
-    public User login(LoginDto loginDto) {
+    public UserDto login(LoginDto loginDto) {
 
         String email = loginDto.email();
         String hashedPassword = hashPassword(loginDto, email);
 
         SorareSignInDto signInDto = sorareGraphQLService.signIn(new LoginDto(email, hashedPassword));
-        User user = userService.getUserBySorareSignInDto(signInDto.currentUser());
+        UserDto user = userService.getUserBySorareSignInDto(signInDto.currentUser());
 
-        sorareTokenService.invalidateActiveTokens(user.getId());
+        sorareTokenService.invalidateActiveTokens(user.id());
         sorareTokenService.persistSorareToken(user, signInDto.jwtToken());
 
         return user;

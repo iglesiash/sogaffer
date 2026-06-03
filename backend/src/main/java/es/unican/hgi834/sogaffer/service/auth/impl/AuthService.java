@@ -2,7 +2,7 @@ package es.unican.hgi834.sogaffer.service.auth.impl;
 
 import es.unican.hgi834.sogaffer.model.dto.auth.AccessTokenDto;
 import es.unican.hgi834.sogaffer.model.dto.auth.AccessRefreshTokenDto;
-import es.unican.hgi834.sogaffer.model.entity.User;
+import es.unican.hgi834.sogaffer.model.dto.auth.UserDto;
 import es.unican.hgi834.sogaffer.service.auth.*;
 import es.unican.hgi834.sogaffer.model.dto.auth.LoginDto;
 import org.springframework.stereotype.Service;
@@ -25,13 +25,13 @@ public class AuthService implements IAuthService {
 
     @Override
     public AccessRefreshTokenDto login(LoginDto loginDto) {
-        User user = sorareLoginService.login(loginDto);
+        UserDto user = sorareLoginService.login(loginDto);
         return generateTokens(user);
     }
 
-    private AccessRefreshTokenDto generateTokens(User user) {
+    private AccessRefreshTokenDto generateTokens(UserDto user) {
         String refreshToken = refreshTokenService.generateRefreshToken(user);
-        AccessTokenDto accessToken = jwtTokenService.generateToken(user.getEmail());
+        AccessTokenDto accessToken = jwtTokenService.generateToken(user.email());
 
         return new AccessRefreshTokenDto(accessToken, refreshToken);
     }

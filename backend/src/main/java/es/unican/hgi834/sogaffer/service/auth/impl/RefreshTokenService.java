@@ -1,7 +1,8 @@
 package es.unican.hgi834.sogaffer.service.auth.impl;
 
+import es.unican.hgi834.sogaffer.model.dto.auth.UserDto;
 import es.unican.hgi834.sogaffer.model.entity.RefreshToken;
-import es.unican.hgi834.sogaffer.model.entity.User;
+import es.unican.hgi834.sogaffer.model.mapper.UserMapper;
 import es.unican.hgi834.sogaffer.repository.IRefreshTokenRepository;
 import es.unican.hgi834.sogaffer.service.auth.IRefreshTokenService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -27,13 +28,13 @@ public class RefreshTokenService implements IRefreshTokenService {
     }
 
     @Override
-    public String generateRefreshToken(User user) {
+    public String generateRefreshToken(UserDto userDto) {
         byte[] randomBytes = new byte[TOKEN_BYTES];
         new SecureRandom().nextBytes(randomBytes);
         String rawToken = Base64.getUrlEncoder().withoutPadding().encodeToString(randomBytes);
 
         RefreshToken refreshToken = new RefreshToken();
-        refreshToken.setUser(user);
+        refreshToken.setUser(UserMapper.toEntity(userDto));
         refreshToken.setHashedToken(passwordEncoder.encode(rawToken));
         refreshToken.setExpirationDate(Instant.now().plusSeconds(TTL));
         refreshTokenRepository.save(refreshToken);
