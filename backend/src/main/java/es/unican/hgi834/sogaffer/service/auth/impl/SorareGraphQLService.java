@@ -1,6 +1,7 @@
 package es.unican.hgi834.sogaffer.service.auth.impl;
 
 import es.unican.hgi834.sogaffer.configuration.JwtPropertiesConfiguration;
+import es.unican.hgi834.sogaffer.exception.InvalidCredentialsException;
 import es.unican.hgi834.sogaffer.exception.SorareAuthException;
 import es.unican.hgi834.sogaffer.model.dto.auth.LoginDto;
 import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareSignInDto;
@@ -57,7 +58,7 @@ public class SorareGraphQLService implements ISorareGraphQLService {
 
         SorareSignInDto signInData = response.data().signIn();
         if (!signInData.errors().isEmpty()) {
-            throw new SorareAuthException(signInData.errors());
+            throw new InvalidCredentialsException();
         }
 
         return signInData;
