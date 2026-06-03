@@ -5,6 +5,7 @@ import es.unican.hgi834.sogaffer.model.dto.sorare.auth.SorareSignInDto;
 import es.unican.hgi834.sogaffer.model.entity.SorareToken;
 import es.unican.hgi834.sogaffer.model.entity.User;
 import es.unican.hgi834.sogaffer.service.auth.*;
+import org.springframework.lang.NonNull;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
@@ -30,17 +31,7 @@ public class SorareLoginService implements ISorareLoginService {
     public User login(LoginDto loginDto) {
 
         String email = loginDto.email();
-        SorareToken existingSorareToken = sorareTokenService.getSorareTokenByEmail(email);
-
-        // A valid token exists, so the user also exists
-        if (existingSorareToken != null) {
-            return userService.getByEmail(email);
-        }
-
-        // If no valid token exists, call Sorare
-        String password = loginDto.password();
-        String salt = sorareAuthService.getSalt(email).salt();
-        String hashedPassword = BCrypt.hashpw(password, salt);
+        String hashedPassword = hashPassword(loginDto, email);
 
         SorareSignInDto signInDto = sorareGraphQLService.signIn(new LoginDto(email, hashedPassword));
         User user = userService.getUserBySorareSignInDto(signInDto.currentUser());
@@ -49,5 +40,11 @@ public class SorareLoginService implements ISorareLoginService {
         sorareTokenService.persistSorareToken(user, signInDto.jwtToken());
 
         return user;
+    }
+
+    private String hashPassword(LoginDto loginDto, String email) {
+        String password = loginDto.password();
+        String salt = sorareAuthService.getSalt(email).salt();
+        return BCrypt.hashpw(password, salt);
     }
 }

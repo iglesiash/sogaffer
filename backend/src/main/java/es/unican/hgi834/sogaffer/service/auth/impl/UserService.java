@@ -35,10 +35,4 @@ public class UserService implements IUserService {
         user.setEmail(currentUser.email());
         return userRepository.save(user);
     }
-
-    @Override
-    @Transactional(readOnly = true)
-    public User getByEmail(String email) {
-        return userRepository.findByEmail(email);
-    }
 }

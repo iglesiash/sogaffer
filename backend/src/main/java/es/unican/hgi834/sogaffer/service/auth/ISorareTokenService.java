@@ -7,7 +7,5 @@ import es.unican.hgi834.sogaffer.model.entity.User;
 public interface ISorareTokenService {
     void invalidateActiveTokens(int userId);
 
-    SorareToken getSorareTokenByEmail(String email);
-
     void persistSorareToken(User user, SorareJwtTokenDto jwtTokenDto);
 }

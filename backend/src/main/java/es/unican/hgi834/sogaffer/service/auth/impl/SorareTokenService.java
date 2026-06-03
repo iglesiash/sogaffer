@@ -31,11 +31,6 @@ public class SorareTokenService implements ISorareTokenService {
     }
 
     @Override
-    public SorareToken getSorareTokenByEmail(String email) {
-        return sorareTokenRepository.findByUserEmail(email);
-    }
-
-    @Override
     public void persistSorareToken(User user, SorareJwtTokenDto jwtTokenDto) {
         SorareToken sorareToken = new SorareToken();
         sorareToken.setUser(user);
