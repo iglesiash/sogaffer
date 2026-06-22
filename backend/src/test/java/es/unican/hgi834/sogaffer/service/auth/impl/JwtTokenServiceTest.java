@@ -26,7 +26,7 @@ class JwtTokenServiceTest {
             Base64.getEncoder().encodeToString("illkeepyoumydirtylittlesecretaar".getBytes(StandardCharsets.UTF_8));
     private static final String AUD = "SoGaffer";
     private static final int DURATION = 3600;
-    public static final String EXPECTED_ALGORITHM = "HmacSHA256";
+    private static final String EXPECTED_ALGORITHM = "HmacSHA256";
     private static final String USERNAME = "correct@email.com";
 
     @Mock

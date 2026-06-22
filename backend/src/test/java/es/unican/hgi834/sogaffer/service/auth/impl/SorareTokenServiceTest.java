@@ -30,7 +30,8 @@ class SorareTokenServiceTest {
             "test@test.com",
             null
     );
-    public static final SorareJwtTokenDto VALID_TOKEN = new SorareJwtTokenDto("sorare_token",
+
+    private static final SorareJwtTokenDto VALID_TOKEN = new SorareJwtTokenDto("sorare_token",
             Instant.now().minus(1, ChronoUnit.SECONDS));
 
     @Mock
