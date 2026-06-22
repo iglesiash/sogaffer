@@ -11,7 +11,7 @@ public class GraphQLQueryLoader {
         return load("auth/signInMutation");
     }
 
-    private static String load(String fileName) {
+    private static String load(String fileName) throws IllegalStateException {
         try {
             ClassPathResource resource = new ClassPathResource("graphql/" + fileName + ".graphql");
             return resource.getContentAsString(StandardCharsets.UTF_8);

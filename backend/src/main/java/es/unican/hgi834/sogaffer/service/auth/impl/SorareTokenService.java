@@ -9,6 +9,7 @@ import es.unican.hgi834.sogaffer.service.auth.IEncryptionService;
 import es.unican.hgi834.sogaffer.service.auth.ISorareTokenService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -24,11 +25,11 @@ public class SorareTokenService implements ISorareTokenService {
     }
 
     @Override
-    public void invalidateActiveTokens(int userId) {
+    public List<SorareToken> invalidateActiveTokens(int userId) {
         Set<SorareToken> activeTokens = sorareTokenRepository.findActiveTokensByUserId(userId);
         activeTokens.forEach(token -> token.setValid(false));
 
-        sorareTokenRepository.saveAll(activeTokens);
+       return sorareTokenRepository.saveAll(activeTokens);
     }
 
     @Override
