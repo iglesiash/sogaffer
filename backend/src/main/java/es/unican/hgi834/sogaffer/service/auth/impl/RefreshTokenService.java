@@ -16,7 +16,7 @@ import java.util.Base64;
 public class RefreshTokenService implements IRefreshTokenService {
 
     private static final int TOKEN_BYTES = 32;
-    public static final int TTL = 7 * 24 * 60 * 60; // 7 days
+    private static final int TTL = 7 * 24 * 60 * 60; // 7 days
 
     private final IRefreshTokenRepository refreshTokenRepository;
     private final PasswordEncoder passwordEncoder;
