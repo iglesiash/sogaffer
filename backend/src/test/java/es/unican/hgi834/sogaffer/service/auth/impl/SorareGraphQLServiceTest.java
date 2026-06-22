@@ -34,6 +34,8 @@ import static org.mockito.Mockito.*;
 class SorareGraphQLServiceTest {
 
     private static final String AUD = "SoGaffer";
+    private static final LoginDto VALID_LOGIN = new LoginDto("correct@email.com", "hashed_password");
+    private static final LoginDto INVALID_LOGIN = new LoginDto("correct@email.com", "incorrect_hashed_password");
 
     @Mock
     private RestClient restClient;
@@ -78,36 +80,15 @@ class SorareGraphQLServiceTest {
     void signIn_shouldReturnJwtToken_whenCredentialsAreValid() {
 
         // Arrange
-        LoginDto loginDto = new LoginDto("correct@email.com", "hashed_password");
-        Map<String, Object> variables = Map.of(
-                "input", loginDto,
-                "aud", AUD);
-
-        Map<String, Object> requestBody = Map.of(
-                "operationName", "SignInMutation",
-                "query", GraphQLQueryLoader.getSignInMutation(),
-                "variables", variables
-        );
-
-        SorareCurrentUserDto currentUser = new SorareCurrentUserDto("00000000-0000-0000-0000-0000000000000", loginDto.email());
-        SorareJwtTokenDto jwtToken = new SorareJwtTokenDto("sorare_token", Instant.now().plus(30, ChronoUnit.DAYS));
-        SorareSignInDto signInDto = new SorareSignInDto(currentUser, jwtToken, List.of());
-        SorareSignInWrapperDto data = new SorareSignInWrapperDto(signInDto);
-
-        SorareGraphQLResponse<SorareSignInWrapperDto> response = new SorareGraphQLResponse<>(data, List.of());
-
-        // RestClient
-        when(restClient.post()).thenReturn(requestBodyUriSpec);
-        when(requestBodySpec.retrieve()).thenReturn(responseSpec);
-        when(requestBodyUriSpec.body(requestBody)).thenReturn(requestBodySpec);
-        when(responseSpec.body(any(ParameterizedTypeReference.class)))
-                .thenReturn(response);
+        Map<String, Object> requestBody = buildRequestBody(VALID_LOGIN);
+        SorareGraphQLResponse<SorareSignInWrapperDto> response = buildSignInResponse(VALID_LOGIN.email(), List.of());
+        mockRestClient(requestBody, response);
 
         // Act
-        SorareSignInDto signInResponse = sut.signIn(loginDto);
+        SorareSignInDto signInResponse = sut.signIn(VALID_LOGIN);
 
         // Assert
-        assertEquals(signInResponse, signInDto);
+        assertEquals(signInResponse, response.data().signIn());
     }
 
     @Test
@@ -119,7 +100,7 @@ class SorareGraphQLServiceTest {
                     .thenThrow(new IllegalStateException("The mutation file could not be read"));
 
         // Act and assert
-        assertThrows(IllegalStateException.class, () -> sut.signIn(new LoginDto("correct@email.com", "hashed_password")));
+        assertThrows(IllegalStateException.class, () -> sut.signIn(VALID_LOGIN));
     }
 
     @Test
@@ -127,33 +108,13 @@ class SorareGraphQLServiceTest {
     void signIn_shouldThrowInvalidCredentialsException_whenCredentialsAreInvalid() {
 
         // Arrange
-        LoginDto loginDto = new LoginDto("correct@email.com", "incorrect_hashed_password");
-        Map<String, Object> variables = Map.of(
-                "input", loginDto,
-                "aud", AUD);
-
-        Map<String, Object> requestBody = Map.of(
-                "operationName", "SignInMutation",
-                "query", GraphQLQueryLoader.getSignInMutation(),
-                "variables", variables
-        );
-
-        SorareCurrentUserDto currentUser = new SorareCurrentUserDto("00000000-0000-0000-0000-0000000000000", loginDto.email());
-        SorareJwtTokenDto jwtToken = new SorareJwtTokenDto("sorare_token", Instant.now().plus(30, ChronoUnit.DAYS));
-        SorareSignInDto signInDto = new SorareSignInDto(currentUser, jwtToken, List.of(new SorareApiErrorDto("Invalid credentials")));
-        SorareSignInWrapperDto data = new SorareSignInWrapperDto(signInDto);
-
-        SorareGraphQLResponse<SorareSignInWrapperDto> response = new SorareGraphQLResponse<>(data, List.of());
-        response = new SorareGraphQLResponse<>(data, List.of());
-
-        when(restClient.post()).thenReturn(requestBodyUriSpec);
-        when(requestBodySpec.retrieve()).thenReturn(responseSpec);
-        when(requestBodyUriSpec.body(requestBody)).thenReturn(requestBodySpec);
-        when(responseSpec.body(any(ParameterizedTypeReference.class)))
-                .thenReturn(response);
+        Map<String, Object> requestBody = buildRequestBody(INVALID_LOGIN);
+        List<SorareApiErrorDto> errors = List.of(new SorareApiErrorDto("Invalid credentials"));
+        SorareGraphQLResponse<SorareSignInWrapperDto> response = buildSignInResponse(INVALID_LOGIN.email(), errors);
+        mockRestClient(requestBody, response);
 
         // Act and assert
-        assertThrows(InvalidCredentialsException.class, () -> sut.signIn(new LoginDto("correct@email.com", "incorrect_hashed_password")));
+        assertThrows(InvalidCredentialsException.class, () -> sut.signIn(INVALID_LOGIN));
     }
 
     @Test
@@ -161,24 +122,55 @@ class SorareGraphQLServiceTest {
     void signIn_shouldThrowExceptionWhenServiceIsUnavailable() {
 
         // Arrange
-        LoginDto loginDto = new LoginDto("correct@email.com", "hashed_password");
+        Map<String, Object> requestBody = buildRequestBody(VALID_LOGIN);
+        mockRestClientException(requestBody, new RuntimeException("Sorare service unavailable"));
+
+        // Act and assert
+        assertThrows(RuntimeException.class, () -> sut.signIn(VALID_LOGIN));
+    }
+
+    /* Auxiliary methods */
+
+    private Map<String, Object> buildRequestBody(LoginDto loginDto) {
         Map<String, Object> variables = Map.of(
                 "input", loginDto,
                 "aud", AUD);
 
-        Map<String, Object> requestBody = Map.of(
+        return Map.of(
                 "operationName", "SignInMutation",
                 "query", GraphQLQueryLoader.getSignInMutation(),
                 "variables", variables
         );
+    }
 
+    private SorareGraphQLResponse<SorareSignInWrapperDto> buildSignInResponse(
+            String email,
+            List<SorareApiErrorDto> errors) {
+
+        SorareCurrentUserDto currentUser =
+                new SorareCurrentUserDto("00000000-0000-0000-0000-0000000000000", email);
+        SorareJwtTokenDto jwtToken =
+                new SorareJwtTokenDto("sorare_token", Instant.now().plus(30, ChronoUnit.DAYS));
+        SorareSignInDto signInDto    = new SorareSignInDto(currentUser, jwtToken, errors);
+        SorareSignInWrapperDto data  = new SorareSignInWrapperDto(signInDto);
+
+        return new SorareGraphQLResponse<>(data, List.of());
+    }
+
+    private void mockRestClient(Map<String, Object> requestBody,
+                                SorareGraphQLResponse<SorareSignInWrapperDto> response) {
         when(restClient.post()).thenReturn(requestBodyUriSpec);
         when(requestBodySpec.retrieve()).thenReturn(responseSpec);
         when(requestBodyUriSpec.body(requestBody)).thenReturn(requestBodySpec);
         when(responseSpec.body(any(ParameterizedTypeReference.class)))
-                .thenThrow(new RuntimeException("Sorare service unavailable"));
+                .thenReturn(response);
+    }
 
-        // Act and assert
-        assertThrows(RuntimeException.class, () -> sut.signIn(loginDto));
+    private void mockRestClientException(Map<String, Object> requestBody,
+                                         RuntimeException exception) {
+        when(restClient.post()).thenReturn(requestBodyUriSpec);
+        when(requestBodyUriSpec.body(requestBody)).thenReturn(requestBodySpec);
+        when(requestBodySpec.retrieve()).thenReturn(responseSpec);
+        when(responseSpec.body(any(ParameterizedTypeReference.class))).thenThrow(exception);
     }
 }
