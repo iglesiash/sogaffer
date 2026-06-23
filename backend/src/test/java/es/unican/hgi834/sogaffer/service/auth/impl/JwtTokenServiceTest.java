@@ -75,9 +75,9 @@ class JwtTokenServiceTest {
         assertEquals(DURATION, (expirationMillis - issuedAtMillis) / 1000);
     }
 
-    // The signing key uses the expected algorithm
     @Test
-    void UIJTS_1b_getSigningKey() {
+    @DisplayName("UIJTS.1b - should return a SecretKey with the expected algorithm")
+    void getSigningKey_shouldReturnKeyWithHmacSHA256Algorithm() {
         SecretKey signingKey = sut.getSigningKey();
 
         assertNotNull(signingKey);
