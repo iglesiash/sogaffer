@@ -40,6 +40,13 @@ public class SorareLoginService implements ISorareLoginService {
         return user;
     }
 
+    /**
+     * Hashes the user's password using a salt based on the provided email.
+     *
+     * @param loginDto the login data that includes the user's email and password.
+     * @param email the email address of the user, used to retrieve the salt.
+     * @return the hashed password
+     */
     private String hashPassword(LoginDto loginDto, String email) {
         String password = loginDto.password();
         String salt = sorareAuthService.getSalt(email).salt();

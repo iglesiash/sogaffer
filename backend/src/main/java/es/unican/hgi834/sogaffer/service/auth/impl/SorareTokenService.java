@@ -43,6 +43,13 @@ public class SorareTokenService implements ISorareTokenService {
         sorareTokenRepository.save(sorareToken);
     }
 
+    /**
+     * Encrypts the given token.
+     *
+     * @param token the plain text token to be encrypted.
+     * @return the encrypted token as a string.
+     * @throws RuntimeException if an error occurs during encryption.
+     */
     private String encryptToken(String token) {
         String encryptedToken;
         try {

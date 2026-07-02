@@ -29,6 +29,13 @@ public class AuthService implements IAuthService {
         return generateTokens(user);
     }
 
+    /**
+     * Generates an access token and a refresh token for the specified user.
+     *
+     * @param user the user for whom the tokens will be generated.
+     * @return an {@link AccessRefreshTokenDto} containing the generated access token
+     * and refresh token.
+     */
     private AccessRefreshTokenDto generateTokens(UserDto user) {
         String refreshToken = refreshTokenService.generateRefreshToken(user);
         AccessTokenDto accessToken = jwtTokenService.generateToken(user.email());
