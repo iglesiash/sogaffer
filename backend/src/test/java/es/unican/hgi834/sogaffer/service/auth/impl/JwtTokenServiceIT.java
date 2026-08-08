@@ -2,50 +2,35 @@ package es.unican.hgi834.sogaffer.service.auth.impl;
 
 import es.unican.hgi834.sogaffer.configuration.JwtPropertiesConfiguration;
 import es.unican.hgi834.sogaffer.model.dto.auth.AccessTokenDto;
+import es.unican.hgi834.sogaffer.service.auth.IJwtTokenService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import javax.crypto.SecretKey;
-import java.nio.charset.StandardCharsets;
-import java.time.Instant;
-import java.util.Base64;
-import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
-class JwtTokenServiceTest {
+@SpringBootTest
+@ActiveProfiles("test")
+class JwtTokenServiceIT {
 
-    private static final String SECRET =
-            Base64.getEncoder().encodeToString("illkeepyoumydirtylittlesecretaar".getBytes(StandardCharsets.UTF_8));
-    private static final String AUD = "SoGaffer";
-    private static final int DURATION = 3600;
     private static final String EXPECTED_ALGORITHM = "HmacSHA256";
     private static final String USERNAME = "correct@email.com";
 
-    @Mock
+    @Autowired
     private JwtPropertiesConfiguration config;
 
-    // Stub under test (SUT)
-    private JwtTokenService sut;
-
-    @BeforeEach
-    void setUp() {
-        when(config.getSecret()).thenReturn(SECRET);
-        when(config.getAud()).thenReturn(AUD);
-        when(config.getDuration()).thenReturn(DURATION);
-
-        sut = new JwtTokenService(config);
-    }
+    // System under test (SUT)
+    @Autowired
+    private IJwtTokenService sut;
 
     @Test
-    @DisplayName("UIJTS.1a - generateToken should return a non-null DTO")
+    @DisplayName("IIJTS.1a - generateToken should return a non-null DTO")
     void generateToken_shouldReturnNonNullDto() {
         AccessTokenDto accessTokenDto = sut.generateToken(USERNAME);
         assertNotNull(accessTokenDto);
@@ -53,31 +38,31 @@ class JwtTokenServiceTest {
     }
 
     @Test
-    @DisplayName("UIJTS.1a - generated token should contain username as subject")
+    @DisplayName("IIJTS.1a - generated token should contain username as subject")
     void generateToken_shouldContainUsernameAsSubject() {
         Claims claims = parseClaims(sut.generateToken(USERNAME).accessToken());
         assertEquals(USERNAME, claims.getSubject());
     }
 
     @Test
-    @DisplayName("UIJTS.1a - generated token should use configured AUD as issuer")
+    @DisplayName("IIJTS.1a - generated token should use configured AUD as issuer")
     void generateToken_shouldUseConfiguredAudAsIssuer() {
         Claims claims = parseClaims(sut.generateToken(USERNAME).accessToken());
-        assertEquals(AUD, claims.getIssuer());
+        assertEquals(config.getAud(), claims.getIssuer());
     }
 
     @Test
-    @DisplayName("UIJTS.1a - token expiration should equal issuedAt plus configured duration")
+    @DisplayName("IIJTS.1a - token expiration should equal issuedAt plus configured duration")
     void generateToken_shouldHaveExpirationBasedOnConfiguredDuration() {
         Claims claims = parseClaims(sut.generateToken(USERNAME).accessToken());
         long expirationMillis = claims.getExpiration().getTime();
-        long issuedAtMillis   = claims.getIssuedAt().getTime();
-        assertEquals(DURATION, (expirationMillis - issuedAtMillis) / 1000);
+        long issuedAtMillis = claims.getIssuedAt().getTime();
+        assertEquals(config.getDuration(), (expirationMillis - issuedAtMillis) / 1000);
     }
 
     @Test
-    @DisplayName("UIJTS.1b - should return a SecretKey with the expected algorithm")
-    void getSigningKey_shouldReturnKeyWithHmacSHA256Algorithm() {
+    @DisplayName("IIJTS.1b - should return a SecretKey with the expected algorithm")
+    void getSigningKey_shouldReturnExpectedAlgorithm() {
         SecretKey signingKey = sut.getSigningKey();
 
         assertNotNull(signingKey);

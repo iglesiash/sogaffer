@@ -84,6 +84,7 @@ class RefreshTokenServiceTest {
     }
 
     @Test
+    @DisplayName("UIRTS.1a - generateRefreshToken should persist a hashed token")
     void generateRefreshToken_validUser_persistsToken() {
         // Arrange
         when(passwordEncoder.encode(anyString())).thenReturn("hashed-token");

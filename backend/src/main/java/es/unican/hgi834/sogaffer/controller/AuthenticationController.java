@@ -24,6 +24,14 @@ public class AuthenticationController {
         this.authenticationService = authenticationService;
     }
 
+    /**
+     * Handles user login by authenticating the provided credentials against Sorare
+     * and generating access and refresh tokens.
+     *
+     * @param loginDto the data transfer object containing the email and password for authentication.
+     * @param response the HTTP response to which the refresh token cookie will be added.
+     * @return the access token details including the token string and its expiration time.
+     */
     @PostMapping("/login")
     @ResponseStatus(code = HttpStatus.OK)
     public AccessTokenDto login(@Valid @RequestBody LoginDto loginDto, HttpServletResponse response) {
@@ -32,6 +40,12 @@ public class AuthenticationController {
         return responseDto.accessToken();
     }
 
+    /**
+     * Adds the refresh token as an HTTP-only cookie to the provided HTTP response.
+     *
+     * @param response     the HTTP response to which the refresh token cookie will be added.
+     * @param refreshToken the refresh token string to be included in the cookie.
+     */
     private void addRefreshCookieToResponse(HttpServletResponse response, String refreshToken) {
         Cookie refreshTokenCookie = new Cookie("refresh_token", refreshToken);
         // TODO: setPath(true) will be necessary after implementing the /refresh endpoint

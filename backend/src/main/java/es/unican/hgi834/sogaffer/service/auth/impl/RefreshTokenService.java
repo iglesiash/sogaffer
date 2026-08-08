@@ -7,6 +7,7 @@ import es.unican.hgi834.sogaffer.repository.IRefreshTokenRepository;
 import es.unican.hgi834.sogaffer.service.auth.IRefreshTokenService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.security.SecureRandom;
 import java.time.Instant;
@@ -28,6 +29,7 @@ public class RefreshTokenService implements IRefreshTokenService {
     }
 
     @Override
+    @Transactional
     public String generateRefreshToken(UserDto userDto) {
         byte[] randomBytes = new byte[TOKEN_BYTES];
         new SecureRandom().nextBytes(randomBytes);
