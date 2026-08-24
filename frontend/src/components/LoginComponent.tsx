@@ -1,6 +1,8 @@
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {loginSchema, type LoginForm} from "../schemas/loginSchema";
+import sorareLogo from "../assets/sorare-global-fantasy-football-vector-logo-seeklogo/sorare-global-fantasy-football-seeklogo.png";
+import "./LoginComponent.css";
 
 const LoginComponent = () => {
     const {
@@ -22,31 +24,38 @@ const LoginComponent = () => {
 
     // TODO: possible i18n for custom placeholders
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div>
-                <input
-                    placeholder="Introduce tu email"
-                    type="email"
-                    id="username"
-                    {...register("username")}
-                />
-                {errors.username && (<p>{errors.username.message}</p>)}
-            </div>
+        <div className="login-page">
+            <form className="login-card" onSubmit={handleSubmit(onSubmit)}>
+                <h1 className="login-title">
+                    Inicia sesión con tus credenciales de {}
+                    <img src={sorareLogo} alt="Sorare" className="login-title-logo"/>
+                </h1>
 
-            <div>
-                <input
-                    placeholder="Introduce tu contraseña"
-                    type="password"
-                    id="password"
-                    {...register("password")}
-                />
-                {errors.password && (<p>{errors.password.message}</p>)}
-            </div>
+                <div className="login-field">
+                    <input
+                        placeholder="Introduce tu email"
+                        type="email"
+                        id="username"
+                        {...register("username")}
+                    />
+                    {errors.username && (<p className="login-error">{errors.username.message}</p>)}
+                </div>
 
-            <button type="submit">
-                Iniciar sesión
-            </button>
-        </form>
+                <div className="login-field">
+                    <input
+                        placeholder="Introduce tu contraseña"
+                        type="password"
+                        id="password"
+                        {...register("password")}
+                    />
+                    {errors.password && (<p className="login-error">{errors.password.message}</p>)}
+                </div>
+
+                <button className="login-submit" type="submit">
+                    Iniciar sesión
+                </button>
+            </form>
+        </div>
     );
 };
 
