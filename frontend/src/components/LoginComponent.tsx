@@ -1,7 +1,7 @@
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {loginSchema, type LoginForm} from "../schemas/loginSchema";
-import sorareLogo from "../assets/sorare-global-fantasy-football-vector-logo-seeklogo/sorare-global-fantasy-football-seeklogo.png";
+import sorareLogo from "../assets/sorare-logo.png";
 import "./LoginComponent.css";
 
 const LoginComponent = () => {
