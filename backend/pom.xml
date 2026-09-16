@@ -36,7 +36,8 @@
 
 	<properties>
 		<java.version>21</java.version>
-		<node.version>v20.19.0</node.version>
+		<node.version>v22.13.0</node.version>
+		<pnpm.version>12.4.2</pnpm.version>
 		<frontend.directory>../frontend/</frontend.directory>
 		<jjwt.version>0.12.6</jjwt.version>
 	</properties>
@@ -157,14 +158,17 @@
 					<execution>
 						<id>install-frontend-tools</id>
 						<goals>
-							<goal>install-node-and-npm</goal>
+							<goal>install-node-and-pnpm</goal>
 						</goals>
+						<configuration>
+							<pnpmVersion>${pnpm.version}</pnpmVersion>
+						</configuration>
 					</execution>
 
 					<execution>
-						<id>npm-install</id>
+						<id>pnpm-install</id>
 						<goals>
-							<goal>npm</goal>
+							<goal>pnpm</goal>
 						</goals>
 						<configuration>
 							<arguments>install</arguments>
@@ -174,7 +178,7 @@
 					<execution>
 						<id>build-frontend</id>
 						<goals>
-							<goal>npm</goal>
+							<goal>pnpm</goal>
 						</goals>
 						<phase>prepare-package</phase>
 						<configuration>
@@ -183,6 +187,7 @@
 					</execution>
 				</executions>
 			</plugin>
+
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
 				<executions>
