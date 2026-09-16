@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 // TODO: i18n for custom messages
-export const loginSchema = z.object({
+export const loginFormSchema = z.object({
     username: z.email("Introduce un email válido"),
     password: z
         .string()
@@ -9,4 +9,4 @@ export const loginSchema = z.object({
         .min(1, "Introduce una contraseña"),
 });
 
-export type LoginForm = z.infer<typeof loginSchema>;
+export type LoginForm = z.infer<typeof loginFormSchema>;

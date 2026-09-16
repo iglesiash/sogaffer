@@ -1,25 +1,27 @@
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {loginSchema, type LoginForm} from "../schemas/loginSchema";
+import {loginFormSchema, type LoginForm} from "../schemas/loginFormSchema.ts";
 import sorareLogo from "../assets/sorare-logo.png";
 import "./LoginComponent.css";
+import {useAuth} from "../hooks/useAuth.ts";
 
 const LoginComponent = () => {
+    const {status, error, login} = useAuth();
+
     const {
         register,
         handleSubmit,
         formState: {errors},
     } = useForm<LoginForm>({
-        resolver: zodResolver(loginSchema),
+        resolver: zodResolver(loginFormSchema),
         defaultValues: {
             username: "",
             password: "",
         },
     });
 
-    function onSubmit(data: LoginForm) {
-        console.log(data.username);
-        console.log(data.password);
+    async function onSubmit(data: LoginForm) {
+        await login(data.username, data.password);
     }
 
     // TODO: possible i18n for custom placeholders
@@ -51,8 +53,10 @@ const LoginComponent = () => {
                     {errors.password && (<p className="login-error">{errors.password.message}</p>)}
                 </div>
 
-                <button className="login-submit" type="submit">
-                    Iniciar sesión
+                {error && (<p className="login-error">{error}</p>)}
+
+                <button className="login-submit" type="submit" disabled={status === "loading"}>
+                    {status === "loading" ? "Iniciando sesión..." : "Iniciar sesión"}
                 </button>
             </form>
         </div>
